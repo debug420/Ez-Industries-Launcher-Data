@@ -27,7 +27,6 @@
     "Murder Mystery 2 GUI":"https://pastebin.com/raw/mg7cecRF",
     "FE Trolling GUI":"https://pastebin.com/raw/RNWgaqCE",
     "Dungeon Quest GUI":"https://pastebin.com/raw/F5vSFHZt",
-    "War Simulator":"https://pastebin.com/raw/m9ubVyiE",
     "Universal Aimbot":"https://raw.githubusercontent.com/Herrtt/AimHot-v8/master/Main.lua",
     "Potato Hub":"https://www.potato-hub.com/PotatoHub.lua",
     "Build A Boat GUI":"https://startsploiting.weebly.com/uploads/1/3/1/5/131560940/obfuscated_93d91a9_build_a_boat_for_treasure_free_simple_gui.txt",
