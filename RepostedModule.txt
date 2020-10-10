@@ -89,7 +89,7 @@
     "Big Paintball GUI":"https://www.pastebin.com/raw/PuaaGKsT",
     "Shinobi Life 2":"https://pastebin.com/raw/GPntpYFp",
     "Imposter GUI":"https://pastebin.com/raw/QSSGgt6k",
-    "Ninja Legends GUI":"https://pastebin.com/raw/QtyEdJ4c",
+    "Ninja Legends GUI":"https://pastebin.com/raw/dRfn5BWg",
     "Zombie Defense GUI":"https://pastebin.com/raw/1NPS8U3v",
     "Dragon Ball Z FS":"https://pastebin.com/raw/fk998NA4",
     "Pet Simulator GUI":"https://pastebin.com/raw/KNiXUX8h",
