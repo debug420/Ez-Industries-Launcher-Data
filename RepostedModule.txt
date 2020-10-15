@@ -24,7 +24,7 @@
     "Unit:Classified GUI":"https://pastebin.com/raw/eLmin0FR",
     "Wild West GUI":"https://thisstuff.xyz/Api/WOAHSCRIPTS/1257821635-9356095531/oOAfkpCWzDWsn4CjuLZLZOs3vCf4rgUMhXaJd32VyHSs2tojOCTUKINNTbAuTTCGFrYTyMeBDEIfdo7C0Sp5EnCyxN80pHf5jpqk2xU7f1LAcx2Nt1cZe",
     "Chat System Messages":"https://pastebin.com/raw/1eRAY7eC",
-    "Murder Mystery 2 GUI":"https://pastebin.com/raw/mg7cecRF",
+    "Murder Mystery 2 GUI":"https://pastebin.com/raw/ru33xE22",
     "FE Trolling GUI":"https://pastebin.com/raw/RNWgaqCE",
     "Dungeon Quest GUI":"https://pastebin.com/raw/F5vSFHZt",
     "Universal Aimbot":"https://raw.githubusercontent.com/Herrtt/AimHot-v8/master/Main.lua",
@@ -87,7 +87,7 @@
     "Exploiter Hub":"https://raw.githubusercontent.com/Kelvinouo/Hub/master/Hub_Script",
     "One Piece Prime GUI":"https://raw.githubusercontent.com/AikaV3rm/Scripts/master/One%20Piece%20Prime",
     "Big Paintball GUI":"https://www.pastebin.com/raw/PuaaGKsT",
-    "Shinobi Life 2":"https://pastebin.com/raw/PiRhfeW7",
+    "Shinobi Life 2":"https://pastebin.com/raw/k29HxYMp",
     "Imposter GUI":"https://pastebin.com/raw/QSSGgt6k",
     "Ninja Legends GUI":"https://pastebin.com/raw/dRfn5BWg",
     "Zombie Defense GUI":"https://pastebin.com/raw/1NPS8U3v",
@@ -115,5 +115,14 @@
     "Tapping Mania GUI":"https://pastebin.com/raw/sYGzZEEr",
     "Jailbreak GUI 2":"https://pastebin.com/raw/px9kqaVy",
     "Da Hood GUI":"https://pastebin.com/raw/78c8befa",
-    "One Punch Man GUI 2":"https://pastebin.com/raw/G675dfew"
+    "One Punch Man GUI 2":"https://pastebin.com/raw/G675dfew",
+    "Allinity Hub":"https://pastebin.com/raw/ALxYpsnJ",
+    "Tapping Mania":"https://pastebin.com/raw/4J6SQPyh",
+    "Invisible Fling":"https://pastebin.com/raw/tnHxX3jn",
+    "Fishing Simulator":"https://pastebin.com/raw/J0KAyKJN",
+    "Mining Champions":"https://pastebin.com/raw/chwBtrEk",
+    "Counter Blox":"https://pastebin.com/raw/bTY5yYAP",
+    "Arsenal Kill All":"https://pastebin.com/raw/qvfhring",
+    "Asterisk Hub":"https://pastebin.com/raw/4Ugf3nFy",
+    "Boku No Roblox":"https://pastebin.com/raw/R1vA1jee"
  }
