@@ -121,5 +121,6 @@
     "Mining Champions":"https://pastebin.com/raw/chwBtrEk",
     "Counter Blox":"https://pastebin.com/raw/bTY5yYAP",
     "Arsenal Kill All":"https://pastebin.com/raw/qvfhring",
-    "Boku No Roblox":"https://pastebin.com/raw/R1vA1jee"
+    "Boku No Roblox":"https://pastebin.com/raw/R1vA1jee",
+    "Shinobi Life 2":"https://pastebin.com/raw/W0kVYsDF"
  }
