@@ -114,7 +114,6 @@
     "Lift Legends GUI":"https://pastebin.com/raw/ucQC3Zvh",
     "Tapping Mania GUI":"https://pastebin.com/raw/sYGzZEEr",
     "Jailbreak GUI 2":"https://pastebin.com/raw/px9kqaVy",
-    "Da Hood GUI":"https://pastebin.com/raw/78c8befa",
     "One Punch Man GUI 2":"https://pastebin.com/raw/G675dfew",
     "Allinity Hub":"https://pastebin.com/raw/ALxYpsnJ",
     "Tapping Mania":"https://pastebin.com/raw/4J6SQPyh",
@@ -123,6 +122,5 @@
     "Mining Champions":"https://pastebin.com/raw/chwBtrEk",
     "Counter Blox":"https://pastebin.com/raw/bTY5yYAP",
     "Arsenal Kill All":"https://pastebin.com/raw/qvfhring",
-    "Asterisk Hub":"https://pastebin.com/raw/4Ugf3nFy",
     "Boku No Roblox":"https://pastebin.com/raw/R1vA1jee"
  }
