@@ -87,7 +87,6 @@
     "Exploiter Hub":"https://raw.githubusercontent.com/Kelvinouo/Hub/master/Hub_Script",
     "One Piece Prime GUI":"https://raw.githubusercontent.com/AikaV3rm/Scripts/master/One%20Piece%20Prime",
     "Big Paintball GUI":"https://www.pastebin.com/raw/PuaaGKsT",
-    "Shinobi Life 2":"https://pastebin.com/raw/k29HxYMp",
     "Imposter GUI":"https://pastebin.com/raw/QSSGgt6k",
     "Ninja Legends GUI":"https://pastebin.com/raw/dRfn5BWg",
     "Zombie Defense GUI":"https://pastebin.com/raw/1NPS8U3v",
