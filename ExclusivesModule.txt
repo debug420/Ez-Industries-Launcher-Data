@@ -1,1 +1,9 @@
-{"Arsenal GUI":"https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives/master/Arsenal%20Premium.lua","Graphics Editor":"https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives/master/Graphics%20Editor%20Premium.lua","Universal GUI":"https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives/master/Universal%20Premium.lua","Prison Life GUI":"https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives/master/Prison%20Life%20Premium.lua","Redwood Prison GUI":"https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives/master/Redwood%20Prison%20Premium.lua","Wild West GUI":"https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives/master/Wild%20West%20GUI%20Premium.lua"}
+{
+    "Arsenal GUI": "https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives/master/Arsenal%20Premium.lua",
+    "Graphics Editor": "https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives/master/Graphics%20Editor%20Premium.lua",
+    "Universal GUI": "https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives/master/Universal%20Premium.lua",
+    "Prison Life GUI": "https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives/master/Prison%20Life%20Premium.lua",
+    "Redwood Prison GUI": "https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives/master/Redwood%20Prison%20Premium.lua",
+    "Wild West GUI": "https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives/master/Wild%20West%20GUI%20Premium.lua",
+    "Vehicle Simulator GUI": "https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives/master/Vehicle%20Simulator%20Premium.lua"
+}
