@@ -90,7 +90,6 @@
     "Zombie Defense GUI": "https://pastebin.com/raw/1NPS8U3v",
     "Dragon Ball Z FS": "https://pastebin.com/raw/fk998NA4",
     "Pet Simulator GUI": "https://pastebin.com/raw/KNiXUX8h",
-    "Alpha X Hub": "https://pastebin.com/raw/evK8nXSC",
     "RageFlake Hub": "https://pastebin.com/raw/PxseP8tt",
     "Rumble Quest GUI": "https://pastebin.com/raw/EUQatQdu",
     "Ro Ghoul GUI": "https://pastebin.com/raw/ZTpaSZ7u",
