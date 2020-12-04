@@ -1,1 +1,3 @@
-
+{
+    "Universal": "https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives-V2/main/Universal.lua"
+}
