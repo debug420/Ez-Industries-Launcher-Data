@@ -1,3 +1,4 @@
 {
-    "Universal": "https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives-V2/main/Universal.lua"
+    "Universal": "https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives-V2/main/Universal.lua",
+    "Prison Life": "https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives-V2/main/Prison%20Life.lua"
 }
