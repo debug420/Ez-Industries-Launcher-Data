@@ -119,9 +119,8 @@ function module.fromBBCode(str)
 end
 
 function module.fromLanguage(lang, str)
-	local lib = script:FindFirstChild(lang:lower())
-	assert(lib, "Language not reckognized.")
-	return module.fromBBCode(require(lib)(str))
+	local lib = "https://raw.githubusercontent.com/debug420/Ez-Industries-Launcher-Data/master/Highlighter/lua.lua"
+	return module.fromBBCode(loadstring(lib)(str))
 end
 
 function api:Destroy()
