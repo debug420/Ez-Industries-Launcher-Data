@@ -6,5 +6,6 @@
     "Redwood Prison":"https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives-V2/main/RedwoodPrison.lua",
     "Saber Sim":"https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives-V2/main/SaberSim.lua",
     "Tower Of Hell":"https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives-V2/main/TOH.lua",
-    "Phantom Forces":"https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives-V2/main/Phantom.lua"
+    "Phantom Forces":"https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives-V2/main/Phantom.lua",
+    "Legends Of Speed":"https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives-V2/main/Legends%20of%20Speed.lua"
 }
