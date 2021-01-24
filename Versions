@@ -1,4 +1,8 @@
 {
+  "3.6": [
+    23,
+    "https://raw.githubusercontent.com/debug420/Ez-Hub/master/EzHub3.6.lua"
+  ],
   "1.9": [
     6,
     "https://raw.githubusercontent.com/debug420/Ez-Hub/master/EzHub1.9.lua"
