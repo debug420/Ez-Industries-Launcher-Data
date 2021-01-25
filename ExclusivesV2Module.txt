@@ -7,6 +7,5 @@
     "Saber Sim":"https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives-V2/main/SaberSim.lua",
     "Tower Of Hell":"https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives-V2/main/TOH.lua",
     "Phantom Forces":"https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives-V2/main/Phantom.lua",
-    "Legends Of Speed":"https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives-V2/main/Legends%20of%20Speed.lua",
-    "Murder Mystery 2": "https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives-V2/main/MM2.lua"
+    "Legends Of Speed":"https://raw.githubusercontent.com/debug420/Ez-Hub-Exclusives-V2/main/Legends%20of%20Speed.lua"
 }
