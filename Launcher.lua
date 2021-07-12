@@ -479,8 +479,13 @@ local FormattedInfo = string.split(PanelInfo, ", ")
 local thumbType = Enum.ThumbnailType.HeadShot
 local thumbSize = Enum.ThumbnailSize.Size420x420
 local content, isReady = game:GetService("Players"):GetUserThumbnailAsync(game:GetService("Players").LocalPlayer.UserId, thumbType, thumbSize)
-repeat wait() until isReady
-wait(1)
+local timeIncrement = 0;
+repeat wait() timeIncrement = timeIncrement + .03
+	if timeIncrement >= 5 then
+		break
+	end
+until isReady
+wait(.5)
 
 Launcher.SideFrame:TweenPosition(UDim2.new(0,0,0,0), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 1, true)
 Launcher.AnimFrame1:TweenPosition(UDim2.new(0.168, 0, 0, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 1, true)
@@ -488,7 +493,7 @@ Launcher.AnimFrame1:TweenPosition(UDim2.new(0.168, 0, 0, 0), Enum.EasingDirectio
 -----------------------------------------------------------------------------
 
 -- Backwards compatibility (EZ HUB)
-
+--[[
 do
 	local a;
 	a = hookfunction(game.HttpGet, function(self, url)
@@ -506,6 +511,7 @@ do
 		return a(self, url)
 	end)
 end
+]]--
 
 -----------------------------------------------------------------------------
 
