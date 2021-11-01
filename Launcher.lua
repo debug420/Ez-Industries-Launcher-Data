@@ -2,7 +2,6 @@
 _G.EzLauncherDevMode = true;
 
 --------------------------------------------------------------------
-
 -- Instances:
 
 local EzLauncher = {
@@ -54,8 +53,9 @@ local EzLauncher = {
 	Launch = Instance.new("TextButton"),
 	UICorner_9 = Instance.new("UICorner"),
 	Containers = Instance.new("Folder"),
-	NewsLabel = Instance.new("TextLabel"),
+	NewsDivider = Instance.new("Frame"),
 	UICorner_10 = Instance.new("UICorner"),
+	NewsLabel = Instance.new("TextLabel"),
 	UIPadding_2 = Instance.new("UIPadding"),
 }
 
@@ -333,7 +333,7 @@ EzLauncher.ContentFrame_3.Size = UDim2.new(1, -20, 0, 70)
 EzLauncher.ThemeSelectionFrame.Name = "ThemeSelectionFrame"
 EzLauncher.ThemeSelectionFrame.Parent = EzLauncher.ContentFrame_3
 EzLauncher.ThemeSelectionFrame.AnchorPoint = Vector2.new(0, 1)
-EzLauncher.ThemeSelectionFrame.BackgroundColor3 = Color3.fromRGB(28, 41, 56)
+EzLauncher.ThemeSelectionFrame.BackgroundColor3 = Color3.fromRGB(41, 84, 178)
 EzLauncher.ThemeSelectionFrame.Position = UDim2.new(0, 0, 1, -4)
 EzLauncher.ThemeSelectionFrame.Size = UDim2.new(0, 150, 0, 30)
 
@@ -378,7 +378,7 @@ EzLauncher.SelectedLabel.TextSize = 14.000
 
 EzLauncher.Launch.Name = "Launch"
 EzLauncher.Launch.Parent = EzLauncher.ContentFrame_3
-EzLauncher.Launch.BackgroundColor3 = Color3.fromRGB(28, 41, 56)
+EzLauncher.Launch.BackgroundColor3 = Color3.fromRGB(41, 84, 178)
 EzLauncher.Launch.Size = UDim2.new(0, 150, 0, 30)
 EzLauncher.Launch.Font = Enum.Font.SourceSans
 EzLauncher.Launch.Text = "Launch"
@@ -391,25 +391,43 @@ EzLauncher.UICorner_9.Parent = EzLauncher.Launch
 EzLauncher.Containers.Name = "Containers"
 EzLauncher.Containers.Parent = EzLauncher.EzLauncher
 
+EzLauncher.NewsDivider.Name = "NewsDivider"
+EzLauncher.NewsDivider.Parent = EzLauncher.Containers
+EzLauncher.NewsDivider.BackgroundColor3 = Color3.fromRGB(18, 98, 159)
+EzLauncher.NewsDivider.LayoutOrder = 1
+EzLauncher.NewsDivider.Size = UDim2.new(1, -10, 0, 3)
+EzLauncher.NewsDivider.Visible = false
+
+EzLauncher.UICorner_10.Parent = EzLauncher.NewsDivider
+
 EzLauncher.NewsLabel.Name = "NewsLabel"
 EzLauncher.NewsLabel.Parent = EzLauncher.Containers
 EzLauncher.NewsLabel.BackgroundColor3 = Color3.fromRGB(28, 41, 56)
+EzLauncher.NewsLabel.BackgroundTransparency = 1.000
 EzLauncher.NewsLabel.Size = UDim2.new(1, -8, 0, 30)
 EzLauncher.NewsLabel.Visible = false
 EzLauncher.NewsLabel.Font = Enum.Font.SourceSans
-EzLauncher.NewsLabel.Text = "Test News"
+EzLauncher.NewsLabel.Text = ""
 EzLauncher.NewsLabel.TextColor3 = Color3.fromRGB(211, 216, 226)
 EzLauncher.NewsLabel.TextSize = 14.000
 EzLauncher.NewsLabel.TextWrapped = true
-
-EzLauncher.UICorner_10.CornerRadius = UDim.new(0, 4)
-EzLauncher.UICorner_10.Parent = EzLauncher.NewsLabel
+EzLauncher.NewsLabel.TextXAlignment = Enum.TextXAlignment.Left
 
 EzLauncher.UIPadding_2.Parent = EzLauncher.NewsLabel
 EzLauncher.UIPadding_2.PaddingBottom = UDim.new(0, 5)
 EzLauncher.UIPadding_2.PaddingLeft = UDim.new(0, 5)
 EzLauncher.UIPadding_2.PaddingRight = UDim.new(0, 5)
 EzLauncher.UIPadding_2.PaddingTop = UDim.new(0, 5)
+
+--------------------------------------------------------------------
+-- Startup animation
+
+local startPos = UDim2.new(-0.5, 0, 0.5, 0);
+local endPos = UDim2.new(0.5, 0, 0.5, 0);
+
+EzLauncher.EzLauncher.Frame.Position = startPos;
+EzLauncher.EzLauncher.Frame:TweenPosition(endPos, Enum.EasingDirection.Out,
+	Enum.EasingStyle.Quad, 0.5);
 
 --------------------------------------------------------------------
 -- Get all the launcher data necessary
@@ -420,23 +438,39 @@ local launcherData = game:GetService("HttpService"):JSONDecode(
 
 local newsData = launcherData["NewsData"];
 local statusData = launcherData["StatusData"];
-local latestVersion = launcherData["LastestVersion"];
+local latestVersion = launcherData["LatestVersion"];
 local themes = launcherData["Themes"];
 
 --------------------------------------------------------------------
 -- Apply the launcher data: News
 
-local newsContainer = EzLauncher.NewsLabel;
-for i,v in pairs(newsData) do
+local layoutOrderOffset = 0;
 
-	local newsOrder = v[1];
+-- Format the layout offset
+local formattedNewsData = {};
+for i,v in pairs(newsData) do
+	table.insert(formattedNewsData, {v[1] + layoutOrderOffset, v[2]});
+	table.insert(formattedNewsData, {v[1] + layoutOrderOffset + 1, "@DIVIDER"});
+	layoutOrderOffset = layoutOrderOffset + 1;
+end
+
+for i,v in pairs(formattedNewsData) do
+
+	local newsOrder = v[1] * -1;	-- This is to make it sort in a different order
 	local newsText = v[2];
 
-	local container = newsContainer:Clone();
-	container.Text = newsText;
-	container.LayoutOrder = newsOrder;
-	container.Parent = EzLauncher.NewsSection.ContentFrame;
-	container.Visible = true;
+	if newsText == "@DIVIDER" then
+		local div = EzLauncher.NewsDivider:Clone();
+		div.LayoutOrder = newsOrder;
+		div.Parent = EzLauncher.NewsSection.ContentFrame;
+		div.Visible = true;
+	else
+		local container = EzLauncher.NewsLabel:Clone();
+		container.Text = newsText;
+		container.LayoutOrder = newsOrder;
+		container.Parent = EzLauncher.NewsSection.ContentFrame;
+		container.Visible = true;
+	end
 
 end
 
@@ -452,8 +486,16 @@ EzLauncher.EzLauncherStatusFrame.StatusName.Text = statusData["EzLauncher"];
 
 EzLauncher.Launch.MouseButton1Click:Connect(function()
 	loadstring(game:HttpGet(latestVersion))();
-	EzLauncher.EzLauncher:Destroy();
+	EzLauncher.EzLauncher.Frame:TweenPosition(endPos, Enum.EasingDirection.Out,
+		Enum.EasingStyle.Quad, 0.5, false, function()
+			EzLauncher.EzLauncher:Destroy();
+		end);
 end)
+
+--------------------------------------------------------------------
+-- Apply the launcher data: Themes
+
+-- TODO
 
 --------------------------------------------------------------------
 -- Dragify
