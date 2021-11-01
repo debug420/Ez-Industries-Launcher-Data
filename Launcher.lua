@@ -1,744 +1,485 @@
+-- set to true if you wish to use the dev branch of the launcher
+_G.EzLauncherDevMode = true;
+
+--------------------------------------------------------------------
+
 -- Instances:
 
-local Launcher = {
-	Launcher = Instance.new("ScreenGui"),
-	MainFrame = Instance.new("Frame"),
-	UICorner = Instance.new("UICorner"),
-	SideFrame = Instance.new("Frame"),
-	PlayerPicture = Instance.new("ImageLabel"),
-	ImageLabel = Instance.new("ImageLabel"),
-	Close = Instance.new("ImageButton"),
-	LaunchPage = Instance.new("Frame"),
+local EzLauncher = {
+	EzLauncher = Instance.new("ScreenGui"),
 	Frame = Instance.new("Frame"),
-	UICorner_2 = Instance.new("UICorner"),
-	Image = Instance.new("ImageButton"),
-	SettingPage = Instance.new("Frame"),
+	StatusSection = Instance.new("Frame"),
+	SectionTopBar = Instance.new("Folder"),
 	Frame_2 = Instance.new("Frame"),
-	UICorner_3 = Instance.new("UICorner"),
-	Image_2 = Instance.new("ImageButton"),
-	AnimFrame2 = Instance.new("Frame"),
-	TextLabel = Instance.new("TextLabel"),
-	AnimFrame1 = Instance.new("Frame"),
-	EzHubSection = Instance.new("Frame"),
-	SectionEs = Instance.new("Folder"),
+	UICorner = Instance.new("UICorner"),
 	Frame_3 = Instance.new("Frame"),
-	UICorner_4 = Instance.new("UICorner"),
+	TextLabel = Instance.new("TextLabel"),
+	UICorner_2 = Instance.new("UICorner"),
+	ContentFrame = Instance.new("Frame"),
+	EzHubStatusFrame = Instance.new("Frame"),
+	Status = Instance.new("TextLabel"),
+	StatusName = Instance.new("TextLabel"),
+	EzAPIStatusFrame = Instance.new("Frame"),
+	Status_2 = Instance.new("TextLabel"),
+	StatusName_2 = Instance.new("TextLabel"),
+	EzLauncherStatusFrame = Instance.new("Frame"),
+	Status_3 = Instance.new("TextLabel"),
+	StatusName_3 = Instance.new("TextLabel"),
+	UIListLayout = Instance.new("UIListLayout"),
+	UICorner_3 = Instance.new("UICorner"),
+	UIListLayout_2 = Instance.new("UIListLayout"),
+	UIPadding = Instance.new("UIPadding"),
+	NewsSection = Instance.new("Frame"),
+	SectionTopBar_2 = Instance.new("Folder"),
 	Frame_4 = Instance.new("Frame"),
+	UICorner_4 = Instance.new("UICorner"),
+	Frame_5 = Instance.new("Frame"),
 	TextLabel_2 = Instance.new("TextLabel"),
 	UICorner_5 = Instance.new("UICorner"),
-	VersionSelectorEzHub = Instance.new("Frame"),
-	Left = Instance.new("TextButton"),
-	Right = Instance.new("TextButton"),
-	Display = Instance.new("TextButton"),
-	LaunchEzHub = Instance.new("TextButton"),
-	UICorner_6 = Instance.new("UICorner"),
-	ServerStatusSection = Instance.new("Frame"),
-	SectionEs_2 = Instance.new("Folder"),
-	Frame_5 = Instance.new("Frame"),
-	UICorner_7 = Instance.new("UICorner"),
+	ContentFrame_2 = Instance.new("ScrollingFrame"),
+	UIListLayout_3 = Instance.new("UIListLayout"),
+	LaunchSection = Instance.new("Frame"),
+	SectionTopBar_3 = Instance.new("Folder"),
 	Frame_6 = Instance.new("Frame"),
-	TextLabel_3 = Instance.new("TextLabel"),
-	TextLabel_4 = Instance.new("TextLabel"),
-	TextLabel_5 = Instance.new("TextLabel"),
-	UICorner_8 = Instance.new("UICorner"),
-	EzCMDStatus = Instance.new("TextLabel"),
-	EzHubStatus = Instance.new("TextLabel"),
-	EzCMDSection = Instance.new("Frame"),
-	SectionEs_3 = Instance.new("Folder"),
+	UICorner_6 = Instance.new("UICorner"),
 	Frame_7 = Instance.new("Frame"),
+	TextLabel_3 = Instance.new("TextLabel"),
+	UICorner_7 = Instance.new("UICorner"),
+	ContentFrame_3 = Instance.new("Frame"),
+	ThemeSelectionFrame = Instance.new("Frame"),
+	UICorner_8 = Instance.new("UICorner"),
+	SelectionLeft = Instance.new("TextLabel"),
+	SelectionRight = Instance.new("TextLabel"),
+	SelectedLabel = Instance.new("TextLabel"),
+	Launch = Instance.new("TextButton"),
 	UICorner_9 = Instance.new("UICorner"),
-	Frame_8 = Instance.new("Frame"),
-	TextLabel_6 = Instance.new("TextLabel"),
+	Containers = Instance.new("Folder"),
+	NewsLabel = Instance.new("TextLabel"),
 	UICorner_10 = Instance.new("UICorner"),
-	LaunchEzCMD = Instance.new("TextButton"),
-	UICorner_11 = Instance.new("UICorner"),
-	VersionSelectorEzCMD = Instance.new("Frame"),
-	Left_2 = Instance.new("TextButton"),
-	Display_2 = Instance.new("TextButton"),
-	Right_2 = Instance.new("TextButton"),
+	UIPadding_2 = Instance.new("UIPadding"),
 }
 
 --Properties:
 
-Launcher.Launcher.Name = "Launcher"
-Launcher.Launcher.Parent = game.CoreGui
-Launcher.Launcher.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+EzLauncher.EzLauncher.Name = "EzLauncher"
+EzLauncher.EzLauncher.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+EzLauncher.EzLauncher.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-Launcher.MainFrame.Name = "MainFrame"
-Launcher.MainFrame.Parent = Launcher.Launcher
-Launcher.MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-Launcher.MainFrame.BackgroundColor3 = Color3.fromRGB(41, 53, 68)
-Launcher.MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
-Launcher.MainFrame.Size = UDim2.new(0, 410, 0, 278)
+EzLauncher.Frame.Parent = EzLauncher.EzLauncher
+EzLauncher.Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+EzLauncher.Frame.BackgroundColor3 = Color3.fromRGB(41, 53, 68)
+EzLauncher.Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+EzLauncher.Frame.Size = UDim2.new(0, 350, 0, 400)
 
-Launcher.UICorner.CornerRadius = UDim.new(0, 4)
-Launcher.UICorner.Parent = Launcher.MainFrame
+EzLauncher.StatusSection.Name = "StatusSection"
+EzLauncher.StatusSection.Parent = EzLauncher.Frame
+EzLauncher.StatusSection.AnchorPoint = Vector2.new(0.5, 0)
+EzLauncher.StatusSection.BackgroundColor3 = Color3.fromRGB(35, 47, 62)
+EzLauncher.StatusSection.BorderSizePixel = 0
+EzLauncher.StatusSection.Size = UDim2.new(1, -20, 0, 100)
 
-Launcher.SideFrame.Name = "SideFrame"
-Launcher.SideFrame.Parent = Launcher.MainFrame
-Launcher.SideFrame.BackgroundColor3 = Color3.fromRGB(28, 41, 56)
-Launcher.SideFrame.BorderSizePixel = 0
-Launcher.SideFrame.Size = UDim2.new(0, 69, 0, 278)
+EzLauncher.SectionTopBar.Name = "SectionTopBar"
+EzLauncher.SectionTopBar.Parent = EzLauncher.StatusSection
 
-Launcher.PlayerPicture.Name = "PlayerPicture"
-Launcher.PlayerPicture.Parent = Launcher.SideFrame
-Launcher.PlayerPicture.AnchorPoint = Vector2.new(0.5, 0.5)
-Launcher.PlayerPicture.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.PlayerPicture.BackgroundTransparency = 1.000
-Launcher.PlayerPicture.BorderSizePixel = 0
-Launcher.PlayerPicture.Position = UDim2.new(0.5, 0, 0, 35)
-Launcher.PlayerPicture.Size = UDim2.new(0, 45, 0, 45)
-Launcher.PlayerPicture.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+EzLauncher.Frame_2.Parent = EzLauncher.SectionTopBar
+EzLauncher.Frame_2.BackgroundColor3 = Color3.fromRGB(18, 98, 159)
+EzLauncher.Frame_2.Size = UDim2.new(0, 2, 0, 32)
 
-Launcher.ImageLabel.Parent = Launcher.PlayerPicture
-Launcher.ImageLabel.AnchorPoint = Vector2.new(0.5, 0.5)
-Launcher.ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.ImageLabel.BackgroundTransparency = 1.000
-Launcher.ImageLabel.BorderSizePixel = 0
-Launcher.ImageLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
-Launcher.ImageLabel.Size = UDim2.new(1, 0, 1, 0)
-Launcher.ImageLabel.Image = "rbxassetid://4031889928"
-Launcher.ImageLabel.ImageColor3 = Color3.fromRGB(28, 41, 56)
+EzLauncher.UICorner.Parent = EzLauncher.Frame_2
 
-Launcher.Close.Name = "Close"
-Launcher.Close.Parent = Launcher.SideFrame
-Launcher.Close.AnchorPoint = Vector2.new(0.5, 0.5)
-Launcher.Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.Close.BackgroundTransparency = 1.000
-Launcher.Close.Position = UDim2.new(0.5, 0, 0.306295037, 0)
-Launcher.Close.Size = UDim2.new(0, 16, 0, 16)
-Launcher.Close.Image = "http://www.roblox.com/asset/?id=5679295310"
-Launcher.Close.ImageColor3 = Color3.fromRGB(211, 216, 226)
+EzLauncher.Frame_3.Parent = EzLauncher.SectionTopBar
+EzLauncher.Frame_3.BackgroundColor3 = Color3.fromRGB(112, 112, 112)
+EzLauncher.Frame_3.BackgroundTransparency = 0.750
+EzLauncher.Frame_3.BorderSizePixel = 0
+EzLauncher.Frame_3.Position = UDim2.new(0, 0, 0, 32)
+EzLauncher.Frame_3.Size = UDim2.new(1, 0, 0, 1)
 
-Launcher.LaunchPage.Name = "LaunchPage"
-Launcher.LaunchPage.Parent = Launcher.SideFrame
-Launcher.LaunchPage.BackgroundColor3 = Color3.fromRGB(35, 47, 62)
-Launcher.LaunchPage.BorderSizePixel = 0
-Launcher.LaunchPage.Position = UDim2.new(0, 0, 0.410071939, 0)
-Launcher.LaunchPage.Size = UDim2.new(1, 0, 0, 50)
+EzLauncher.TextLabel.Parent = EzLauncher.SectionTopBar
+EzLauncher.TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+EzLauncher.TextLabel.BackgroundTransparency = 1.000
+EzLauncher.TextLabel.Position = UDim2.new(0, 12, 0, 4)
+EzLauncher.TextLabel.Size = UDim2.new(0, 299, 0, 24)
+EzLauncher.TextLabel.Font = Enum.Font.SourceSans
+EzLauncher.TextLabel.Text = "Server Status"
+EzLauncher.TextLabel.TextColor3 = Color3.fromRGB(211, 216, 226)
+EzLauncher.TextLabel.TextSize = 14.000
+EzLauncher.TextLabel.TextXAlignment = Enum.TextXAlignment.Left
 
-Launcher.Frame.Parent = Launcher.LaunchPage
-Launcher.Frame.BackgroundColor3 = Color3.fromRGB(18, 98, 159)
-Launcher.Frame.Size = UDim2.new(0, 2, 1, 0)
+EzLauncher.UICorner_2.CornerRadius = UDim.new(0, 4)
+EzLauncher.UICorner_2.Parent = EzLauncher.StatusSection
 
-Launcher.UICorner_2.Parent = Launcher.Frame
+EzLauncher.ContentFrame.Name = "ContentFrame"
+EzLauncher.ContentFrame.Parent = EzLauncher.StatusSection
+EzLauncher.ContentFrame.AnchorPoint = Vector2.new(0.5, 1)
+EzLauncher.ContentFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+EzLauncher.ContentFrame.BackgroundTransparency = 1.000
+EzLauncher.ContentFrame.Position = UDim2.new(0.5, 0, 1, -2)
+EzLauncher.ContentFrame.Size = UDim2.new(1, -20, 0, 60)
 
-Launcher.Image.Name = "Image"
-Launcher.Image.Parent = Launcher.LaunchPage
-Launcher.Image.AnchorPoint = Vector2.new(0.5, 0.5)
-Launcher.Image.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.Image.BackgroundTransparency = 1.000
-Launcher.Image.Position = UDim2.new(0.5, 0, 0.5, 0)
-Launcher.Image.Size = UDim2.new(0, 22, 0, 22)
-Launcher.Image.Image = "http://www.roblox.com/asset/?id=2876994160"
+EzLauncher.EzHubStatusFrame.Name = "EzHubStatusFrame"
+EzLauncher.EzHubStatusFrame.Parent = EzLauncher.ContentFrame
+EzLauncher.EzHubStatusFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+EzLauncher.EzHubStatusFrame.BackgroundTransparency = 1.000
+EzLauncher.EzHubStatusFrame.LayoutOrder = 2
+EzLauncher.EzHubStatusFrame.Position = UDim2.new(0, 10, 0, 38)
+EzLauncher.EzHubStatusFrame.Size = UDim2.new(0, 60, 0, 60)
 
-Launcher.SettingPage.Name = "SettingPage"
-Launcher.SettingPage.Parent = Launcher.SideFrame
-Launcher.SettingPage.BackgroundColor3 = Color3.fromRGB(35, 47, 62)
-Launcher.SettingPage.BackgroundTransparency = 1.000
-Launcher.SettingPage.BorderSizePixel = 0
-Launcher.SettingPage.Position = UDim2.new(0, 0, 0.587769806, 0)
-Launcher.SettingPage.Size = UDim2.new(1, 0, 0, 50)
+EzLauncher.Status.Name = "Status"
+EzLauncher.Status.Parent = EzLauncher.EzHubStatusFrame
+EzLauncher.Status.AnchorPoint = Vector2.new(0.5, 0.5)
+EzLauncher.Status.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+EzLauncher.Status.BackgroundTransparency = 1.000
+EzLauncher.Status.Position = UDim2.new(0.5, 0, 0.5, 12)
+EzLauncher.Status.Size = UDim2.new(0, 50, 0, 30)
+EzLauncher.Status.Font = Enum.Font.SourceSans
+EzLauncher.Status.Text = "Online"
+EzLauncher.Status.TextColor3 = Color3.fromRGB(45, 192, 179)
+EzLauncher.Status.TextSize = 20.000
 
-Launcher.Frame_2.Parent = Launcher.SettingPage
-Launcher.Frame_2.BackgroundColor3 = Color3.fromRGB(18, 98, 159)
-Launcher.Frame_2.Size = UDim2.new(0, 2, 1, 0)
-Launcher.Frame_2.Visible = false
+EzLauncher.StatusName.Name = "StatusName"
+EzLauncher.StatusName.Parent = EzLauncher.EzHubStatusFrame
+EzLauncher.StatusName.AnchorPoint = Vector2.new(0.5, 0.5)
+EzLauncher.StatusName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+EzLauncher.StatusName.BackgroundTransparency = 1.000
+EzLauncher.StatusName.Position = UDim2.new(0.5, 0, 0.5, -12)
+EzLauncher.StatusName.Size = UDim2.new(0, 50, 0, 30)
+EzLauncher.StatusName.Font = Enum.Font.SourceSans
+EzLauncher.StatusName.Text = "Ez Hub"
+EzLauncher.StatusName.TextColor3 = Color3.fromRGB(92, 106, 124)
+EzLauncher.StatusName.TextSize = 14.000
 
-Launcher.UICorner_3.Parent = Launcher.Frame_2
+EzLauncher.EzAPIStatusFrame.Name = "EzAPIStatusFrame"
+EzLauncher.EzAPIStatusFrame.Parent = EzLauncher.ContentFrame
+EzLauncher.EzAPIStatusFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+EzLauncher.EzAPIStatusFrame.BackgroundTransparency = 1.000
+EzLauncher.EzAPIStatusFrame.LayoutOrder = 3
+EzLauncher.EzAPIStatusFrame.Position = UDim2.new(0, 80, 0, 38)
+EzLauncher.EzAPIStatusFrame.Size = UDim2.new(0, 60, 0, 60)
 
-Launcher.Image_2.Name = "Image"
-Launcher.Image_2.Parent = Launcher.SettingPage
-Launcher.Image_2.AnchorPoint = Vector2.new(0.5, 0.5)
-Launcher.Image_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.Image_2.BackgroundTransparency = 1.000
-Launcher.Image_2.Position = UDim2.new(0.5, 0, 0.5, 0)
-Launcher.Image_2.Size = UDim2.new(0, 15, 0, 15)
-Launcher.Image_2.Image = "http://www.roblox.com/asset/?id=4492476121"
+EzLauncher.Status_2.Name = "Status"
+EzLauncher.Status_2.Parent = EzLauncher.EzAPIStatusFrame
+EzLauncher.Status_2.AnchorPoint = Vector2.new(0.5, 0.5)
+EzLauncher.Status_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+EzLauncher.Status_2.BackgroundTransparency = 1.000
+EzLauncher.Status_2.Position = UDim2.new(0.5, 0, 0.5, 12)
+EzLauncher.Status_2.Size = UDim2.new(0, 50, 0, 30)
+EzLauncher.Status_2.Font = Enum.Font.SourceSans
+EzLauncher.Status_2.Text = "Online"
+EzLauncher.Status_2.TextColor3 = Color3.fromRGB(45, 192, 179)
+EzLauncher.Status_2.TextSize = 20.000
 
-Launcher.AnimFrame2.Name = "AnimFrame2"
-Launcher.AnimFrame2.Parent = Launcher.MainFrame
-Launcher.AnimFrame2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.AnimFrame2.BackgroundTransparency = 1.000
-Launcher.AnimFrame2.Position = UDim2.new(0.168292686, 0, 0, 0)
-Launcher.AnimFrame2.Size = UDim2.new(0, 341, 0, 278)
-Launcher.AnimFrame2.Visible = false
+EzLauncher.StatusName_2.Name = "StatusName"
+EzLauncher.StatusName_2.Parent = EzLauncher.EzAPIStatusFrame
+EzLauncher.StatusName_2.AnchorPoint = Vector2.new(0.5, 0.5)
+EzLauncher.StatusName_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+EzLauncher.StatusName_2.BackgroundTransparency = 1.000
+EzLauncher.StatusName_2.Position = UDim2.new(0.5, 0, 0.5, -12)
+EzLauncher.StatusName_2.Size = UDim2.new(0, 50, 0, 30)
+EzLauncher.StatusName_2.Font = Enum.Font.SourceSans
+EzLauncher.StatusName_2.Text = "Ez API"
+EzLauncher.StatusName_2.TextColor3 = Color3.fromRGB(92, 106, 124)
+EzLauncher.StatusName_2.TextSize = 14.000
 
-Launcher.TextLabel.Parent = Launcher.AnimFrame2
-Launcher.TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
-Launcher.TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.TextLabel.BackgroundTransparency = 1.000
-Launcher.TextLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
-Launcher.TextLabel.Size = UDim2.new(0, 200, 0, 50)
-Launcher.TextLabel.Font = Enum.Font.SourceSans
-Launcher.TextLabel.Text = "This feature is not done yet"
-Launcher.TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.TextLabel.TextSize = 20.000
+EzLauncher.EzLauncherStatusFrame.Name = "EzLauncherStatusFrame"
+EzLauncher.EzLauncherStatusFrame.Parent = EzLauncher.ContentFrame
+EzLauncher.EzLauncherStatusFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+EzLauncher.EzLauncherStatusFrame.BackgroundTransparency = 1.000
+EzLauncher.EzLauncherStatusFrame.LayoutOrder = 1
+EzLauncher.EzLauncherStatusFrame.Position = UDim2.new(0, 150, 0, 38)
+EzLauncher.EzLauncherStatusFrame.Size = UDim2.new(0, 60, 0, 60)
 
-Launcher.AnimFrame1.Name = "AnimFrame1"
-Launcher.AnimFrame1.Parent = Launcher.MainFrame
-Launcher.AnimFrame1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.AnimFrame1.BackgroundTransparency = 1.000
-Launcher.AnimFrame1.Position = UDim2.new(0.168292686, 0, 0, 0)
-Launcher.AnimFrame1.Size = UDim2.new(0, 341, 0, 278)
-Launcher.AnimFrame1.Visible = false
+EzLauncher.Status_3.Name = "Status"
+EzLauncher.Status_3.Parent = EzLauncher.EzLauncherStatusFrame
+EzLauncher.Status_3.AnchorPoint = Vector2.new(0.5, 0.5)
+EzLauncher.Status_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+EzLauncher.Status_3.BackgroundTransparency = 1.000
+EzLauncher.Status_3.Position = UDim2.new(0.5, 0, 0.5, 12)
+EzLauncher.Status_3.Size = UDim2.new(0, 50, 0, 30)
+EzLauncher.Status_3.Font = Enum.Font.SourceSans
+EzLauncher.Status_3.Text = "Online"
+EzLauncher.Status_3.TextColor3 = Color3.fromRGB(45, 192, 179)
+EzLauncher.Status_3.TextSize = 20.000
 
-Launcher.EzHubSection.Name = "EzHubSection"
-Launcher.EzHubSection.Parent = Launcher.AnimFrame1
-Launcher.EzHubSection.AnchorPoint = Vector2.new(0.5, 0.5)
-Launcher.EzHubSection.BackgroundColor3 = Color3.fromRGB(35, 47, 62)
-Launcher.EzHubSection.BorderSizePixel = 0
-Launcher.EzHubSection.Position = UDim2.new(0.260997087, 0, 0.696402788, 0)
-Launcher.EzHubSection.Size = UDim2.new(0, 150, 0, 116)
+EzLauncher.StatusName_3.Name = "StatusName"
+EzLauncher.StatusName_3.Parent = EzLauncher.EzLauncherStatusFrame
+EzLauncher.StatusName_3.AnchorPoint = Vector2.new(0.5, 0.5)
+EzLauncher.StatusName_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+EzLauncher.StatusName_3.BackgroundTransparency = 1.000
+EzLauncher.StatusName_3.Position = UDim2.new(0.5, 0, 0.5, -12)
+EzLauncher.StatusName_3.Size = UDim2.new(0, 50, 0, 30)
+EzLauncher.StatusName_3.Font = Enum.Font.SourceSans
+EzLauncher.StatusName_3.Text = "Ez Launcher"
+EzLauncher.StatusName_3.TextColor3 = Color3.fromRGB(92, 106, 124)
+EzLauncher.StatusName_3.TextSize = 14.000
 
-Launcher.SectionEs.Name = "SectionEs"
-Launcher.SectionEs.Parent = Launcher.EzHubSection
+EzLauncher.UIListLayout.Parent = EzLauncher.ContentFrame
+EzLauncher.UIListLayout.FillDirection = Enum.FillDirection.Horizontal
+EzLauncher.UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+EzLauncher.UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+EzLauncher.UIListLayout.Padding = UDim.new(0, 25)
 
-Launcher.Frame_3.Parent = Launcher.SectionEs
-Launcher.Frame_3.BackgroundColor3 = Color3.fromRGB(18, 98, 159)
-Launcher.Frame_3.Size = UDim2.new(0, 2, 0, 36)
+EzLauncher.UICorner_3.CornerRadius = UDim.new(0, 4)
+EzLauncher.UICorner_3.Parent = EzLauncher.Frame
 
-Launcher.UICorner_4.Parent = Launcher.Frame_3
+EzLauncher.UIListLayout_2.Parent = EzLauncher.Frame
+EzLauncher.UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+EzLauncher.UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+EzLauncher.UIListLayout_2.Padding = UDim.new(0, 5)
 
-Launcher.Frame_4.Parent = Launcher.SectionEs
-Launcher.Frame_4.BackgroundColor3 = Color3.fromRGB(112, 112, 112)
-Launcher.Frame_4.BackgroundTransparency = 0.750
-Launcher.Frame_4.BorderSizePixel = 0
-Launcher.Frame_4.Position = UDim2.new(0, 0, 0.294290125, 0)
-Launcher.Frame_4.Size = UDim2.new(1, 0, 0, 1)
+EzLauncher.UIPadding.Parent = EzLauncher.Frame
+EzLauncher.UIPadding.PaddingBottom = UDim.new(0, 10)
+EzLauncher.UIPadding.PaddingTop = UDim.new(0, 10)
 
-Launcher.TextLabel_2.Parent = Launcher.SectionEs
-Launcher.TextLabel_2.AnchorPoint = Vector2.new(1, 0)
-Launcher.TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.TextLabel_2.BackgroundTransparency = 1.000
-Launcher.TextLabel_2.Position = UDim2.new(1, 0, 0.0439999998, 0)
-Launcher.TextLabel_2.Size = UDim2.new(0.899999976, 0, 0, 24)
-Launcher.TextLabel_2.Font = Enum.Font.SourceSans
-Launcher.TextLabel_2.Text = "Ez Hub"
-Launcher.TextLabel_2.TextColor3 = Color3.fromRGB(211, 216, 226)
-Launcher.TextLabel_2.TextSize = 14.000
-Launcher.TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
+EzLauncher.NewsSection.Name = "NewsSection"
+EzLauncher.NewsSection.Parent = EzLauncher.Frame
+EzLauncher.NewsSection.AnchorPoint = Vector2.new(0.5, 0)
+EzLauncher.NewsSection.BackgroundColor3 = Color3.fromRGB(35, 47, 62)
+EzLauncher.NewsSection.BorderSizePixel = 0
+EzLauncher.NewsSection.Size = UDim2.new(1, -20, 0, 150)
 
-Launcher.UICorner_5.CornerRadius = UDim.new(0, 4)
-Launcher.UICorner_5.Parent = Launcher.EzHubSection
+EzLauncher.SectionTopBar_2.Name = "SectionTopBar"
+EzLauncher.SectionTopBar_2.Parent = EzLauncher.NewsSection
 
-Launcher.VersionSelectorEzHub.Name = "VersionSelectorEzHub"
-Launcher.VersionSelectorEzHub.Parent = Launcher.EzHubSection
-Launcher.VersionSelectorEzHub.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.VersionSelectorEzHub.BackgroundTransparency = 1.000
-Launcher.VersionSelectorEzHub.Position = UDim2.new(0, 10, 0.414000005, 0)
-Launcher.VersionSelectorEzHub.Size = UDim2.new(0, 86, 0, 28)
+EzLauncher.Frame_4.Parent = EzLauncher.SectionTopBar_2
+EzLauncher.Frame_4.BackgroundColor3 = Color3.fromRGB(18, 98, 159)
+EzLauncher.Frame_4.Size = UDim2.new(0, 2, 0, 32)
 
-Launcher.Left.Name = "Left"
-Launcher.Left.Parent = Launcher.VersionSelectorEzHub
-Launcher.Left.AnchorPoint = Vector2.new(0, 0.5)
-Launcher.Left.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.Left.BackgroundTransparency = 1.000
-Launcher.Left.Position = UDim2.new(0, 0, 0.5, 0)
-Launcher.Left.Size = UDim2.new(0, 20, 0, 20)
-Launcher.Left.Font = Enum.Font.SourceSans
-Launcher.Left.Text = "<"
-Launcher.Left.TextColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.Left.TextSize = 14.000
+EzLauncher.UICorner_4.Parent = EzLauncher.Frame_4
 
-Launcher.Right.Name = "Right"
-Launcher.Right.Parent = Launcher.VersionSelectorEzHub
-Launcher.Right.AnchorPoint = Vector2.new(1, 0.5)
-Launcher.Right.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.Right.BackgroundTransparency = 1.000
-Launcher.Right.Position = UDim2.new(1, 0, 0.5, 0)
-Launcher.Right.Size = UDim2.new(0, 20, 0, 20)
-Launcher.Right.Font = Enum.Font.SourceSans
-Launcher.Right.Text = ">"
-Launcher.Right.TextColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.Right.TextSize = 14.000
+EzLauncher.Frame_5.Parent = EzLauncher.SectionTopBar_2
+EzLauncher.Frame_5.BackgroundColor3 = Color3.fromRGB(112, 112, 112)
+EzLauncher.Frame_5.BackgroundTransparency = 0.750
+EzLauncher.Frame_5.BorderSizePixel = 0
+EzLauncher.Frame_5.Position = UDim2.new(0, 0, 0, 32)
+EzLauncher.Frame_5.Size = UDim2.new(1, 0, 0, 1)
 
-Launcher.Display.Name = "Display"
-Launcher.Display.Parent = Launcher.VersionSelectorEzHub
-Launcher.Display.AnchorPoint = Vector2.new(0.5, 0.5)
-Launcher.Display.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.Display.BackgroundTransparency = 1.000
-Launcher.Display.Position = UDim2.new(0.5, 0, 0.5, 0)
-Launcher.Display.Size = UDim2.new(0, 55, 0, 20)
-Launcher.Display.Font = Enum.Font.SourceSans
-Launcher.Display.Text = "V 3.3"
-Launcher.Display.TextColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.Display.TextSize = 14.000
+EzLauncher.TextLabel_2.Parent = EzLauncher.SectionTopBar_2
+EzLauncher.TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+EzLauncher.TextLabel_2.BackgroundTransparency = 1.000
+EzLauncher.TextLabel_2.Position = UDim2.new(0, 12, 0, 4)
+EzLauncher.TextLabel_2.Size = UDim2.new(0, 299, 0, 24)
+EzLauncher.TextLabel_2.Font = Enum.Font.SourceSans
+EzLauncher.TextLabel_2.Text = "News"
+EzLauncher.TextLabel_2.TextColor3 = Color3.fromRGB(211, 216, 226)
+EzLauncher.TextLabel_2.TextSize = 14.000
+EzLauncher.TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
 
-Launcher.LaunchEzHub.Name = "LaunchEzHub"
-Launcher.LaunchEzHub.Parent = Launcher.EzHubSection
-Launcher.LaunchEzHub.BackgroundColor3 = Color3.fromRGB(18, 98, 159)
-Launcher.LaunchEzHub.Position = UDim2.new(0, 10, 0.720000029, 0)
-Launcher.LaunchEzHub.Size = UDim2.new(0, 86, 0, 22)
-Launcher.LaunchEzHub.Font = Enum.Font.SourceSans
-Launcher.LaunchEzHub.Text = "Launch"
-Launcher.LaunchEzHub.TextColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.LaunchEzHub.TextSize = 14.000
+EzLauncher.UICorner_5.CornerRadius = UDim.new(0, 4)
+EzLauncher.UICorner_5.Parent = EzLauncher.NewsSection
 
-Launcher.UICorner_6.CornerRadius = UDim.new(0, 4)
-Launcher.UICorner_6.Parent = Launcher.LaunchEzHub
+EzLauncher.ContentFrame_2.Name = "ContentFrame"
+EzLauncher.ContentFrame_2.Parent = EzLauncher.NewsSection
+EzLauncher.ContentFrame_2.Active = true
+EzLauncher.ContentFrame_2.AnchorPoint = Vector2.new(0.5, 1)
+EzLauncher.ContentFrame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+EzLauncher.ContentFrame_2.BackgroundTransparency = 1.000
+EzLauncher.ContentFrame_2.BorderSizePixel = 0
+EzLauncher.ContentFrame_2.Position = UDim2.new(0.5, 0, 1, -8)
+EzLauncher.ContentFrame_2.Size = UDim2.new(1, -20, 0, 100)
+EzLauncher.ContentFrame_2.CanvasSize = UDim2.new(0, 0, 0, 0)
+EzLauncher.ContentFrame_2.ScrollBarThickness = 0
 
-Launcher.ServerStatusSection.Name = "ServerStatusSection"
-Launcher.ServerStatusSection.Parent = Launcher.AnimFrame1
-Launcher.ServerStatusSection.AnchorPoint = Vector2.new(0.5, 0.5)
-Launcher.ServerStatusSection.BackgroundColor3 = Color3.fromRGB(35, 47, 62)
-Launcher.ServerStatusSection.BorderSizePixel = 0
-Launcher.ServerStatusSection.Position = UDim2.new(0.5, 0, 0.0701438859, 50)
-Launcher.ServerStatusSection.Size = UDim2.new(0, 312, 0, 116)
+EzLauncher.UIListLayout_3.Parent = EzLauncher.ContentFrame_2
+EzLauncher.UIListLayout_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
+EzLauncher.UIListLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
+EzLauncher.UIListLayout_3.Padding = UDim.new(0, 5)
 
-Launcher.SectionEs_2.Name = "SectionEs"
-Launcher.SectionEs_2.Parent = Launcher.ServerStatusSection
+EzLauncher.LaunchSection.Name = "LaunchSection"
+EzLauncher.LaunchSection.Parent = EzLauncher.Frame
+EzLauncher.LaunchSection.AnchorPoint = Vector2.new(0.5, 0)
+EzLauncher.LaunchSection.BackgroundColor3 = Color3.fromRGB(35, 47, 62)
+EzLauncher.LaunchSection.BorderSizePixel = 0
+EzLauncher.LaunchSection.Size = UDim2.new(1, -20, 0, 120)
 
-Launcher.Frame_5.Parent = Launcher.SectionEs_2
-Launcher.Frame_5.BackgroundColor3 = Color3.fromRGB(18, 98, 159)
-Launcher.Frame_5.Size = UDim2.new(0, 2, 0, 36)
+EzLauncher.SectionTopBar_3.Name = "SectionTopBar"
+EzLauncher.SectionTopBar_3.Parent = EzLauncher.LaunchSection
 
-Launcher.UICorner_7.Parent = Launcher.Frame_5
+EzLauncher.Frame_6.Parent = EzLauncher.SectionTopBar_3
+EzLauncher.Frame_6.BackgroundColor3 = Color3.fromRGB(18, 98, 159)
+EzLauncher.Frame_6.Size = UDim2.new(0, 2, 0, 32)
 
-Launcher.Frame_6.Parent = Launcher.SectionEs_2
-Launcher.Frame_6.BackgroundColor3 = Color3.fromRGB(112, 112, 112)
-Launcher.Frame_6.BackgroundTransparency = 0.750
-Launcher.Frame_6.BorderSizePixel = 0
-Launcher.Frame_6.Position = UDim2.new(0, 0, 0.294290125, 0)
-Launcher.Frame_6.Size = UDim2.new(1, 0, 0, 1)
+EzLauncher.UICorner_6.Parent = EzLauncher.Frame_6
 
-Launcher.TextLabel_3.Parent = Launcher.SectionEs_2
-Launcher.TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.TextLabel_3.BackgroundTransparency = 1.000
-Launcher.TextLabel_3.Position = UDim2.new(0.0416666679, 0, 0.0435512774, 0)
-Launcher.TextLabel_3.Size = UDim2.new(0, 299, 0, 24)
-Launcher.TextLabel_3.Font = Enum.Font.SourceSans
-Launcher.TextLabel_3.Text = "Server Status"
-Launcher.TextLabel_3.TextColor3 = Color3.fromRGB(211, 216, 226)
-Launcher.TextLabel_3.TextSize = 14.000
-Launcher.TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
+EzLauncher.Frame_7.Parent = EzLauncher.SectionTopBar_3
+EzLauncher.Frame_7.BackgroundColor3 = Color3.fromRGB(112, 112, 112)
+EzLauncher.Frame_7.BackgroundTransparency = 0.750
+EzLauncher.Frame_7.BorderSizePixel = 0
+EzLauncher.Frame_7.Position = UDim2.new(0, 0, 0, 32)
+EzLauncher.Frame_7.Size = UDim2.new(1, 0, 0, 1)
 
-Launcher.TextLabel_4.Parent = Launcher.ServerStatusSection
-Launcher.TextLabel_4.AnchorPoint = Vector2.new(0.5, 0.5)
-Launcher.TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.TextLabel_4.BackgroundTransparency = 1.000
-Launcher.TextLabel_4.Position = UDim2.new(0.699999988, 0, 0.5, 0)
-Launcher.TextLabel_4.Size = UDim2.new(0, 50, 0, 30)
-Launcher.TextLabel_4.Font = Enum.Font.SourceSans
-Launcher.TextLabel_4.Text = "Ez CMD"
-Launcher.TextLabel_4.TextColor3 = Color3.fromRGB(92, 106, 124)
-Launcher.TextLabel_4.TextSize = 14.000
+EzLauncher.TextLabel_3.Parent = EzLauncher.SectionTopBar_3
+EzLauncher.TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+EzLauncher.TextLabel_3.BackgroundTransparency = 1.000
+EzLauncher.TextLabel_3.Position = UDim2.new(0, 12, 0, 4)
+EzLauncher.TextLabel_3.Size = UDim2.new(0, 299, 0, 24)
+EzLauncher.TextLabel_3.Font = Enum.Font.SourceSans
+EzLauncher.TextLabel_3.Text = "Launcher / Other"
+EzLauncher.TextLabel_3.TextColor3 = Color3.fromRGB(211, 216, 226)
+EzLauncher.TextLabel_3.TextSize = 14.000
+EzLauncher.TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
 
-Launcher.TextLabel_5.Parent = Launcher.ServerStatusSection
-Launcher.TextLabel_5.AnchorPoint = Vector2.new(0.5, 0.5)
-Launcher.TextLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.TextLabel_5.BackgroundTransparency = 1.000
-Launcher.TextLabel_5.Position = UDim2.new(0.300000012, 0, 0.5, 0)
-Launcher.TextLabel_5.Size = UDim2.new(0, 50, 0, 30)
-Launcher.TextLabel_5.Font = Enum.Font.SourceSans
-Launcher.TextLabel_5.Text = "Ez Hub"
-Launcher.TextLabel_5.TextColor3 = Color3.fromRGB(92, 106, 124)
-Launcher.TextLabel_5.TextSize = 14.000
+EzLauncher.UICorner_7.CornerRadius = UDim.new(0, 4)
+EzLauncher.UICorner_7.Parent = EzLauncher.LaunchSection
 
-Launcher.UICorner_8.CornerRadius = UDim.new(0, 4)
-Launcher.UICorner_8.Parent = Launcher.ServerStatusSection
+EzLauncher.ContentFrame_3.Name = "ContentFrame"
+EzLauncher.ContentFrame_3.Parent = EzLauncher.LaunchSection
+EzLauncher.ContentFrame_3.AnchorPoint = Vector2.new(0.5, 1)
+EzLauncher.ContentFrame_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+EzLauncher.ContentFrame_3.BackgroundTransparency = 1.000
+EzLauncher.ContentFrame_3.BorderColor3 = Color3.fromRGB(27, 42, 53)
+EzLauncher.ContentFrame_3.Position = UDim2.new(0.5, 0, 1, -8)
+EzLauncher.ContentFrame_3.Size = UDim2.new(1, -20, 0, 70)
 
-Launcher.EzCMDStatus.Name = "EzCMDStatus"
-Launcher.EzCMDStatus.Parent = Launcher.ServerStatusSection
-Launcher.EzCMDStatus.AnchorPoint = Vector2.new(0.5, 0.5)
-Launcher.EzCMDStatus.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.EzCMDStatus.BackgroundTransparency = 1.000
-Launcher.EzCMDStatus.Position = UDim2.new(0.698461592, 0, 0.758620679, 0)
-Launcher.EzCMDStatus.Size = UDim2.new(0, 50, 0, 30)
-Launcher.EzCMDStatus.Font = Enum.Font.SourceSans
-Launcher.EzCMDStatus.Text = "Online"
-Launcher.EzCMDStatus.TextColor3 = Color3.fromRGB(45, 192, 179)
-Launcher.EzCMDStatus.TextSize = 22.000
+EzLauncher.ThemeSelectionFrame.Name = "ThemeSelectionFrame"
+EzLauncher.ThemeSelectionFrame.Parent = EzLauncher.ContentFrame_3
+EzLauncher.ThemeSelectionFrame.AnchorPoint = Vector2.new(0, 1)
+EzLauncher.ThemeSelectionFrame.BackgroundColor3 = Color3.fromRGB(28, 41, 56)
+EzLauncher.ThemeSelectionFrame.Position = UDim2.new(0, 0, 1, -4)
+EzLauncher.ThemeSelectionFrame.Size = UDim2.new(0, 150, 0, 30)
 
-Launcher.EzHubStatus.Name = "EzHubStatus"
-Launcher.EzHubStatus.Parent = Launcher.ServerStatusSection
-Launcher.EzHubStatus.AnchorPoint = Vector2.new(0.5, 0.5)
-Launcher.EzHubStatus.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.EzHubStatus.BackgroundTransparency = 1.000
-Launcher.EzHubStatus.Position = UDim2.new(0.297820538, 0, 0.758620679, 0)
-Launcher.EzHubStatus.Size = UDim2.new(0, 50, 0, 30)
-Launcher.EzHubStatus.Font = Enum.Font.SourceSans
-Launcher.EzHubStatus.Text = "Online"
-Launcher.EzHubStatus.TextColor3 = Color3.fromRGB(45, 192, 179)
-Launcher.EzHubStatus.TextSize = 22.000
+EzLauncher.UICorner_8.CornerRadius = UDim.new(0, 4)
+EzLauncher.UICorner_8.Parent = EzLauncher.ThemeSelectionFrame
 
-Launcher.EzCMDSection.Name = "EzCMDSection"
-Launcher.EzCMDSection.Parent = Launcher.AnimFrame1
-Launcher.EzCMDSection.AnchorPoint = Vector2.new(0.5, 0.5)
-Launcher.EzCMDSection.BackgroundColor3 = Color3.fromRGB(35, 47, 62)
-Launcher.EzCMDSection.BorderSizePixel = 0
-Launcher.EzCMDSection.Position = UDim2.new(0.736070395, 0, 0.696402788, 0)
-Launcher.EzCMDSection.Size = UDim2.new(0, 150, 0, 116)
+EzLauncher.SelectionLeft.Name = "SelectionLeft"
+EzLauncher.SelectionLeft.Parent = EzLauncher.ThemeSelectionFrame
+EzLauncher.SelectionLeft.AnchorPoint = Vector2.new(0, 0.5)
+EzLauncher.SelectionLeft.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+EzLauncher.SelectionLeft.BackgroundTransparency = 1.000
+EzLauncher.SelectionLeft.Position = UDim2.new(0, 5, 0.5, 0)
+EzLauncher.SelectionLeft.Size = UDim2.new(0, 20, 0, 20)
+EzLauncher.SelectionLeft.Font = Enum.Font.SourceSans
+EzLauncher.SelectionLeft.Text = "<"
+EzLauncher.SelectionLeft.TextColor3 = Color3.fromRGB(211, 216, 226)
+EzLauncher.SelectionLeft.TextSize = 14.000
 
-Launcher.SectionEs_3.Name = "SectionEs"
-Launcher.SectionEs_3.Parent = Launcher.EzCMDSection
+EzLauncher.SelectionRight.Name = "SelectionRight"
+EzLauncher.SelectionRight.Parent = EzLauncher.ThemeSelectionFrame
+EzLauncher.SelectionRight.AnchorPoint = Vector2.new(1, 0.5)
+EzLauncher.SelectionRight.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+EzLauncher.SelectionRight.BackgroundTransparency = 1.000
+EzLauncher.SelectionRight.Position = UDim2.new(1, -5, 0.5, 0)
+EzLauncher.SelectionRight.Size = UDim2.new(0, 20, 0, 20)
+EzLauncher.SelectionRight.Font = Enum.Font.SourceSans
+EzLauncher.SelectionRight.Text = ">"
+EzLauncher.SelectionRight.TextColor3 = Color3.fromRGB(211, 216, 226)
+EzLauncher.SelectionRight.TextSize = 14.000
 
-Launcher.Frame_7.Parent = Launcher.SectionEs_3
-Launcher.Frame_7.BackgroundColor3 = Color3.fromRGB(18, 98, 159)
-Launcher.Frame_7.Size = UDim2.new(0, 2, 0, 36)
+EzLauncher.SelectedLabel.Name = "SelectedLabel"
+EzLauncher.SelectedLabel.Parent = EzLauncher.ThemeSelectionFrame
+EzLauncher.SelectedLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+EzLauncher.SelectedLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+EzLauncher.SelectedLabel.BackgroundTransparency = 1.000
+EzLauncher.SelectedLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
+EzLauncher.SelectedLabel.Size = UDim2.new(1, -54, 1, -2)
+EzLauncher.SelectedLabel.Font = Enum.Font.SourceSans
+EzLauncher.SelectedLabel.Text = "Default Theme"
+EzLauncher.SelectedLabel.TextColor3 = Color3.fromRGB(211, 216, 226)
+EzLauncher.SelectedLabel.TextSize = 14.000
 
-Launcher.UICorner_9.Parent = Launcher.Frame_7
+EzLauncher.Launch.Name = "Launch"
+EzLauncher.Launch.Parent = EzLauncher.ContentFrame_3
+EzLauncher.Launch.BackgroundColor3 = Color3.fromRGB(28, 41, 56)
+EzLauncher.Launch.Size = UDim2.new(0, 150, 0, 30)
+EzLauncher.Launch.Font = Enum.Font.SourceSans
+EzLauncher.Launch.Text = "Launch"
+EzLauncher.Launch.TextColor3 = Color3.fromRGB(211, 216, 226)
+EzLauncher.Launch.TextSize = 14.000
 
-Launcher.Frame_8.Parent = Launcher.SectionEs_3
-Launcher.Frame_8.BackgroundColor3 = Color3.fromRGB(112, 112, 112)
-Launcher.Frame_8.BackgroundTransparency = 0.750
-Launcher.Frame_8.BorderSizePixel = 0
-Launcher.Frame_8.Position = UDim2.new(0, 0, 0.294290125, 0)
-Launcher.Frame_8.Size = UDim2.new(1, 0, 0, 1)
+EzLauncher.UICorner_9.CornerRadius = UDim.new(0, 4)
+EzLauncher.UICorner_9.Parent = EzLauncher.Launch
 
-Launcher.TextLabel_6.Parent = Launcher.SectionEs_3
-Launcher.TextLabel_6.AnchorPoint = Vector2.new(1, 0)
-Launcher.TextLabel_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.TextLabel_6.BackgroundTransparency = 1.000
-Launcher.TextLabel_6.Position = UDim2.new(1, 0, 0.0439999998, 0)
-Launcher.TextLabel_6.Size = UDim2.new(0.899999976, 0, 0, 24)
-Launcher.TextLabel_6.Font = Enum.Font.SourceSans
-Launcher.TextLabel_6.Text = "Ez CMD"
-Launcher.TextLabel_6.TextColor3 = Color3.fromRGB(211, 216, 226)
-Launcher.TextLabel_6.TextSize = 14.000
-Launcher.TextLabel_6.TextXAlignment = Enum.TextXAlignment.Left
+EzLauncher.Containers.Name = "Containers"
+EzLauncher.Containers.Parent = EzLauncher.EzLauncher
 
-Launcher.UICorner_10.CornerRadius = UDim.new(0, 4)
-Launcher.UICorner_10.Parent = Launcher.EzCMDSection
+EzLauncher.NewsLabel.Name = "NewsLabel"
+EzLauncher.NewsLabel.Parent = EzLauncher.Containers
+EzLauncher.NewsLabel.BackgroundColor3 = Color3.fromRGB(28, 41, 56)
+EzLauncher.NewsLabel.Size = UDim2.new(1, -8, 0, 30)
+EzLauncher.NewsLabel.Visible = false
+EzLauncher.NewsLabel.Font = Enum.Font.SourceSans
+EzLauncher.NewsLabel.Text = "Test News"
+EzLauncher.NewsLabel.TextColor3 = Color3.fromRGB(211, 216, 226)
+EzLauncher.NewsLabel.TextSize = 14.000
+EzLauncher.NewsLabel.TextWrapped = true
 
-Launcher.LaunchEzCMD.Name = "LaunchEzCMD"
-Launcher.LaunchEzCMD.Parent = Launcher.EzCMDSection
-Launcher.LaunchEzCMD.BackgroundColor3 = Color3.fromRGB(18, 98, 159)
-Launcher.LaunchEzCMD.Position = UDim2.new(0, 10, 0.720000029, 0)
-Launcher.LaunchEzCMD.Size = UDim2.new(0, 86, 0, 22)
-Launcher.LaunchEzCMD.Font = Enum.Font.SourceSans
-Launcher.LaunchEzCMD.Text = "Launch"
-Launcher.LaunchEzCMD.TextColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.LaunchEzCMD.TextSize = 14.000
+EzLauncher.UICorner_10.CornerRadius = UDim.new(0, 4)
+EzLauncher.UICorner_10.Parent = EzLauncher.NewsLabel
 
-Launcher.UICorner_11.CornerRadius = UDim.new(0, 4)
-Launcher.UICorner_11.Parent = Launcher.LaunchEzCMD
+EzLauncher.UIPadding_2.Parent = EzLauncher.NewsLabel
+EzLauncher.UIPadding_2.PaddingBottom = UDim.new(0, 5)
+EzLauncher.UIPadding_2.PaddingLeft = UDim.new(0, 5)
+EzLauncher.UIPadding_2.PaddingRight = UDim.new(0, 5)
+EzLauncher.UIPadding_2.PaddingTop = UDim.new(0, 5)
 
-Launcher.VersionSelectorEzCMD.Name = "VersionSelectorEzCMD"
-Launcher.VersionSelectorEzCMD.Parent = Launcher.EzCMDSection
-Launcher.VersionSelectorEzCMD.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.VersionSelectorEzCMD.BackgroundTransparency = 1.000
-Launcher.VersionSelectorEzCMD.Position = UDim2.new(0, 10, 0.414000005, 0)
-Launcher.VersionSelectorEzCMD.Size = UDim2.new(0, 86, 0, 28)
+--------------------------------------------------------------------
+-- Get all the launcher data necessary
 
-Launcher.Left_2.Name = "Left"
-Launcher.Left_2.Parent = Launcher.VersionSelectorEzCMD
-Launcher.Left_2.AnchorPoint = Vector2.new(0, 0.5)
-Launcher.Left_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.Left_2.BackgroundTransparency = 1.000
-Launcher.Left_2.Position = UDim2.new(0, 0, 0.5, 0)
-Launcher.Left_2.Size = UDim2.new(0, 20, 0, 20)
-Launcher.Left_2.Font = Enum.Font.SourceSans
-Launcher.Left_2.Text = "<"
-Launcher.Left_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.Left_2.TextSize = 14.000
+local isDev = _G.EzLauncherDevMode;
+local launcherData = game:GetService("HttpService"):JSONDecode(
+	(game:HttpGet("https://raw.githubusercontent.com/debug420/Ez-Industries-Launcher-Data/"..(isDev and "dev" or "master").."/LauncherData.json")));
 
-Launcher.Display_2.Name = "Display"
-Launcher.Display_2.Parent = Launcher.VersionSelectorEzCMD
-Launcher.Display_2.AnchorPoint = Vector2.new(0.5, 0.5)
-Launcher.Display_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.Display_2.BackgroundTransparency = 1.000
-Launcher.Display_2.Position = UDim2.new(0.5, 0, 0.5, 0)
-Launcher.Display_2.Size = UDim2.new(0, 55, 0, 20)
-Launcher.Display_2.Font = Enum.Font.SourceSans
-Launcher.Display_2.Text = "N/A"
-Launcher.Display_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.Display_2.TextSize = 14.000
+local newsData = launcherData["NewsData"];
+local statusData = launcherData["StatusData"];
+local latestVersion = launcherData["LastestVersion"];
+local themes = launcherData["Themes"];
 
-Launcher.Right_2.Name = "Right"
-Launcher.Right_2.Parent = Launcher.VersionSelectorEzCMD
-Launcher.Right_2.AnchorPoint = Vector2.new(1, 0.5)
-Launcher.Right_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.Right_2.BackgroundTransparency = 1.000
-Launcher.Right_2.Position = UDim2.new(1, 0, 0.5, 0)
-Launcher.Right_2.Size = UDim2.new(0, 20, 0, 20)
-Launcher.Right_2.Font = Enum.Font.SourceSans
-Launcher.Right_2.Text = ">"
-Launcher.Right_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Launcher.Right_2.TextSize = 14.000
+--------------------------------------------------------------------
+-- Apply the launcher data: News
 
------------------------------------------------------------------------------
+local newsContainer = EzLauncher.NewsLabel;
+for i,v in pairs(newsData) do
 
--- Start-Up Animations
+	local newsOrder = v[1];
+	local newsText = v[2];
 
-Launcher.MainFrame.Size = UDim2.new(0,0,0,0)
-Launcher.MainFrame.ClipsDescendants = true
-Launcher.MainFrame:TweenSize(UDim2.new(0, 410, 0, 278), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 1, true)
+	local container = newsContainer:Clone();
+	container.Text = newsText;
+	container.LayoutOrder = newsOrder;
+	container.Parent = EzLauncher.NewsSection.ContentFrame;
+	container.Visible = true;
 
-for i,v in pairs(Launcher.MainFrame:GetChildren()) do
-	if v:IsA("Frame") and string.find(v.Name:lower(), "animframe") then
-		v.Visible = true
-		v.Position = UDim2.new(1, 0, 0, 0)
-	end
 end
 
-Launcher.SideFrame.Position = UDim2.new(0, 0, 1, 0)
+--------------------------------------------------------------------
+-- Apply the launcher data: Status
 
-local PanelInfo = game:HttpGet(('https://raw.githubusercontent.com/debug420/Ez-Industries-Launcher-Data/master/Main'),true)
-local FormattedInfo = string.split(PanelInfo, ", ")
-local thumbType = Enum.ThumbnailType.HeadShot
-local thumbSize = Enum.ThumbnailSize.Size420x420
-local content, isReady = game:GetService("Players"):GetUserThumbnailAsync(game:GetService("Players").LocalPlayer.UserId, thumbType, thumbSize)
-local timeIncrement = 0;
-repeat wait() timeIncrement = timeIncrement + .03
-	if timeIncrement >= 5 then
-		break
-	end
-until isReady
-wait(.5)
+EzLauncher.EzHubStatusFrame.StatusName.Text = statusData["EzHub"];
+EzLauncher.EzAPIStatusFrame.StatusName.Text = statusData["EzAPI"];
+EzLauncher.EzLauncherStatusFrame.StatusName.Text = statusData["EzLauncher"];
 
-Launcher.SideFrame:TweenPosition(UDim2.new(0,0,0,0), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 1, true)
-Launcher.AnimFrame1:TweenPosition(UDim2.new(0.168, 0, 0, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 1, true)
+--------------------------------------------------------------------
+-- Apply the launcher data: latest version
 
------------------------------------------------------------------------------
-
--- Backwards compatibility (EZ HUB)
---[[
-do
-	local a;
-	a = hookfunction(game.HttpGet, function(self, url)
-		if url == "https://raw.githubusercontent.com/debug420/Ez-Industries-Launcher-Data/master/ExclusivesModule.txt" then
-			url = "https://raw.githubusercontent.com/debug420/Ez-Hub/master/Modules/ExclusiveV1.json"
-		elseif url == "https://raw.githubusercontent.com/debug420/Ez-Industries-Launcher-Data/master/ExclusivesV2Module.txt" then
-			url = "https://raw.githubusercontent.com/debug420/Ez-Hub/master/Modules/ExclusivesV2.json"
-		elseif url == "https://raw.githubusercontent.com/debug420/Ez-Industries-Launcher-Data/master/EzLib.lua" then
-			url = "https://raw.githubusercontent.com/debug420/Ez-Hub/master/Modules/EzLib.lua"
-		elseif url == "https://raw.githubusercontent.com/debug420/Ez-Industries-Launcher-Data/master/RepostedModule.txt" then
-			url = "https://raw.githubusercontent.com/debug420/Ez-Hub/master/Modules/RepostedModule.json"
-		elseif url == "https://raw.githubusercontent.com/debug420/Ez-Industries-Launcher-Data/master/lexermodule.lua" then
-			url = "https://raw.githubusercontent.com/debug420/Ez-Hub/master/Modules/LexerModule.lua"
-		end
-		return a(self, url)
-	end)
-end
-]]--
-
------------------------------------------------------------------------------
-
-local function AppColor(box)
-	local t = box.Text:lower()
-	if t == "online" then
-		return Color3.fromRGB(45, 192, 179)
-	elseif t == "maintenance" or t == "updating" then
-		return Color3.fromRGB(192, 177, 14)
-	elseif t == "offline" or "down" then
-		return Color3.fromRGB(192, 49, 52)
-	end
-	return Color3.fromRGB(45, 192, 179);
-end
-
-Launcher.EzHubStatus.Text = FormattedInfo[2]:gsub("%s+", "")
-Launcher.EzCMDStatus.Text = FormattedInfo[3]:gsub("%s+", "")
-Launcher.EzCMDStatus.TextColor3 = AppColor(Launcher.EzCMDStatus)
-Launcher.EzHubStatus.TextColor3 = AppColor(Launcher.EzHubStatus)
-Launcher.PlayerPicture.Image = content
-
------------------------------------------------------------------------------
-
--- Apply Version Selection Func
-
-local EzHubV = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://raw.githubusercontent.com/debug420/Ez-Industries-Launcher-Data/master/Versions"))
-
-local EzCMDV = {}
-
-function GetValWithIndex(ind, t)
-	for i,v in pairs(t) do
-		if v[1] == ind then
-			return {i, v};
-		end
-	end	
-end
-
-function GetLargestIndex(t)
-	local l = 0
-	for i,v in pairs(t) do
-		if v[1] > l then l = v[1] end
-	end
-	return l;
-end
-
-local SelectedEzCMDV = "https://raw.githubusercontent.com/debug420/Ez-CMD/master/EzCMD.lua"
-local SelectedEzHubV = (function() for i,v in pairs(EzHubV) do 
-		if v[1] == GetLargestIndex(EzHubV) then
-			return v[2];
-		end		
-end end)()
-
-
-
-function ApplyVSF(Frame, t)
-	assert(Frame.Display, "Invalid Frame supplied to VSF Func")
-	assert(Frame.Left, "Invalid Frame supplied to VSF Func")
-	assert(Frame.Right, "Invalid Frame supplied to VSF Func")
-
-	local IndexVal = Instance.new("IntValue", Frame)
-	IndexVal.Value = GetLargestIndex(t)
-	Frame.Display.Text = "V "..GetValWithIndex(GetLargestIndex(t), t)[1]
-	Frame.Left.MouseButton1Click:Connect(function()
-		if IndexVal.Value > 1 then
-			IndexVal.Value = IndexVal.Value - 1
-		else
-			IndexVal.Value = GetLargestIndex(t)
-		end
-
-		Frame.Display.Text = "V "..GetValWithIndex(IndexVal.Value, t)[1]
-	end)
-	Frame.Right.MouseButton1Click:Connect(function()
-		if IndexVal.Value < GetLargestIndex(t) then
-			IndexVal.Value = IndexVal.Value + 1
-		else
-			IndexVal.Value = 1
-		end
-
-		Frame.Display.Text = "V "..GetValWithIndex(IndexVal.Value, t)[1]
-	end)
-end
-
-ApplyVSF(Launcher.VersionSelectorEzHub, EzHubV);
-
------------------------------------------------------------------------------
-
--- Launch
-
-local launchdebounce = true
-
-Launcher.LaunchEzHub.MouseButton1Click:Connect(function()
-	
-	if Launcher.EzHubStatus.TextColor3 == Color3.fromRGB(192, 49, 52) or Launcher.EzHubStatus.TextColor3 == Color3.fromRGB(192, 177, 14) then
-		if launchdebounce then
-			launchdebounce = false
-			Launcher.LaunchEzHub.Text = "Service Down"
-			wait(1)
-			game.StarterGui:SetCore("SendNotification", {
-				Title = "Ez Industries",
-				Text = "Ez Hub is currently offline. Join Discord for more info."
-			})
-			Launcher.LaunchEzHub.Text = "Launch"
-			launchdebounce = true
-			return;
-		end
-	end
-	
-	if launchdebounce then
-		SelectedEzHubV = EzHubV[Launcher.VersionSelectorEzHub.Display.Text:gsub("V ", "")][2]
-		launchdebounce = false
-		Launcher.LaunchEzHub.Text = "Launching..."
-		pcall(function() loadstring(game:HttpGet(SelectedEzHubV))() end)
-		Launcher.LaunchEzHub.Text = "Launch"
-		launchdebounce = true
-	end
-	
+EzLauncher.Launch.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet(latestVersion))();
+	EzLauncher.EzLauncher:Destroy();
 end)
 
-Launcher.LaunchEzCMD.MouseButton1Click:Connect(function()
-	if launchdebounce then
-		launchdebounce = false
-		Launcher.LaunchEzCMD.Text = "Launching..."
-		pcall(function() loadstring(game:HttpGet(SelectedEzCMDV))() end)
-		Launcher.LaunchEzCMD.Text = "Launch"
-		launchdebounce = true
-	end
-end)
-
------------------------------------------------------------------------------
-
--- Tab System
-
-local tabdebounce = true
-function OpenTab(tabtoclose, taptoopen)
-	if tabtoclose then
-		tabtoclose:TweenPosition(UDim2.new(1, 0, 0, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.5, true)
-		wait(0.5)
-	end
-	if taptoopen then
-		taptoopen:TweenPosition(UDim2.new(0.168, 0, 0, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.5, true)
-	end
-end
-
-function LaunchPageF()
-	if tabdebounce == false then return end;
-	tabdebounce = false
-	spawn(function()
-		OpenTab(Launcher.AnimFrame2, Launcher.AnimFrame1)
-	end)
-	Launcher.LaunchPage.BackgroundTransparency = 0
-	Launcher.SettingPage.BackgroundTransparency = 1
-	
-	Launcher.LaunchPage.Frame.Visible = true
-	Launcher.SettingPage.Frame.Visible = false
-	wait(1)
-	tabdebounce = true
-end
-
-function SettingPageF()
-	if tabdebounce == false then return end;
-	tabdebounce = false
-	spawn(function()
-		OpenTab(Launcher.AnimFrame1, Launcher.AnimFrame2)
-	end)
-	Launcher.LaunchPage.BackgroundTransparency = 1
-	Launcher.SettingPage.BackgroundTransparency = 0
-	
-	Launcher.LaunchPage.Frame.Visible = false
-	Launcher.SettingPage.Frame.Visible = true
-	wait(1)
-	tabdebounce = true
-end
-
-Launcher.LaunchPage.InputBegan:Connect(function(input)
-	if input.UserInputType == Enum.UserInputType.MouseButton1 then
-		LaunchPageF()
-	end
-end)
-
-Launcher.SettingPage.InputBegan:Connect(function(input)
-	if input.UserInputType == Enum.UserInputType.MouseButton1 then
-		SettingPageF()
-	end
-end)
-
-Launcher.LaunchPage.Image.MouseButton1Click:Connect(function()
-	LaunchPageF()
-end)
-
-Launcher.SettingPage.Image.MouseButton1Click:Connect(function()
-	SettingPageF()
-end)
-
------------------------------------------------------------------------------
-
--- Close
-
-Launcher.Close.MouseButton1Click:Connect(function()
-	Launcher.Launcher:Destroy()
-end)
-
------------------------------------------------------------------------------
-
--- Draggability
+--------------------------------------------------------------------
+-- Dragify
 
 local function dragify(MainFrame)
 
-	local dragging
-	local dragInput
-	local dragStart
-	local startPos
+	local dragging;
+	local dragInput;
+	local dragStart;
+	local startPos;
 
 	local function update(input)
-		Delta = input.Position - dragStart
-		Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
-		game:GetService("TweenService"):Create(MainFrame, TweenInfo.new(.25), {Position = Position}):Play()
+		local Delta = input.Position - dragStart;
+		local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y);
+		game:GetService("TweenService"):Create(MainFrame, TweenInfo.new(.15), {Position = Position}):Play();
 	end
 
 	MainFrame.InputBegan:Connect(function(input)
 		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-			dragging = true
-			dragStart = input.Position
-			startPos = MainFrame.Position
+			dragging = true;
+			dragStart = input.Position;
+			startPos = MainFrame.Position;
 
 			input.Changed:Connect(function()
 				if input.UserInputState == Enum.UserInputState.End then
-					dragging = false
+					dragging = false;
 				end
 			end)
 		end
@@ -746,15 +487,15 @@ local function dragify(MainFrame)
 
 	MainFrame.InputChanged:Connect(function(input)
 		if (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
-			dragInput = input
+			dragInput = input;
 		end
 	end)
 
 	game:GetService("UserInputService").InputChanged:Connect(function(input)
 		if input == dragInput and dragging then
-			update(input)
+			update(input);
 		end
 	end)
 end
 
-dragify(Launcher.MainFrame)
+dragify(EzLauncher.EzLauncher.Frame);
