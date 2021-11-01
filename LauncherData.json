@@ -1,7 +1,7 @@
 {
     "NewsData": [
-        [1, "This should now finally conclude Ez Hub 4.1. A shit load of bug fixes and improvements were made. Expect 4.2 to be released within the next few years (unless some bug I missed comes out of nowhere)"],
-        [2, "No development will be done on Ez Hub for a few days (maybe 2 weeks). Don't ask for updates (unless it is related to a bug)"],
+        [1, "No development will be done on Ez Hub for a few days (maybe 2 weeks). Don't ask for updates (unless it is related to a bug)"],
+        [2, "@DIVIDER"],
         [3, "I will continue development in a few days and follow the plans that were laid out in the newsletter.\nThe new launcher will allow:\n- Better customization of Ez Hub:\n    - Themes\n    - Various different settings\n- Better news display\n- Built in newsletter tab\n- No more version selections (as previous versions simply do not work)\n\nAlong with a new launcher, the reposted section will also be receiving a complete new overhaul as most scripts are now outdated. The section will include less, but more reliable and higher quality scripts. This was not mentioned in the newsletter as I am not sure when this will be released. Along with the new reposted module, new features will be coming for each script. More news will be announced soon."]
     ],
     "StatusData": {

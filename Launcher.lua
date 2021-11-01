@@ -277,7 +277,7 @@ EzLauncher.ContentFrame_2.BorderSizePixel = 0
 EzLauncher.ContentFrame_2.Position = UDim2.new(0.5, 0, 1, -8)
 EzLauncher.ContentFrame_2.Size = UDim2.new(1, -20, 0, 100)
 EzLauncher.ContentFrame_2.CanvasSize = UDim2.new(0, 0, 0, 0)
-EzLauncher.ContentFrame_2.ScrollBarThickness = 0
+EzLauncher.ContentFrame_2.ScrollBarThickness = 4
 
 EzLauncher.UIListLayout_3.Parent = EzLauncher.ContentFrame_2
 EzLauncher.UIListLayout_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -420,6 +420,13 @@ EzLauncher.UIPadding_2.PaddingRight = UDim.new(0, 5)
 EzLauncher.UIPadding_2.PaddingTop = UDim.new(0, 5)
 
 --------------------------------------------------------------------
+-- Gui to lua manual properties
+
+EzLauncher.Containers.NewsLabel.AutomaticSize = Enum.AutomaticSize.Y;
+EzLauncher.NewsSection.ContentFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y;
+EzLauncher.NewsSection.ContentFrame.ScrollBarImageColor3 = Color3.fromRGB(112, 112, 112);
+
+--------------------------------------------------------------------
 -- Startup animation
 
 local startPos = UDim2.new(-0.5, 0, 0.5, 0);
@@ -444,17 +451,7 @@ local themes = launcherData["Themes"];
 --------------------------------------------------------------------
 -- Apply the launcher data: News
 
-local layoutOrderOffset = 0;
-
--- Format the layout offset
-local formattedNewsData = {};
 for i,v in pairs(newsData) do
-	table.insert(formattedNewsData, {v[1] + layoutOrderOffset, v[2]});
-	table.insert(formattedNewsData, {v[1] + layoutOrderOffset + 1, "@DIVIDER"});
-	layoutOrderOffset = layoutOrderOffset + 1;
-end
-
-for i,v in pairs(formattedNewsData) do
 
 	local newsOrder = v[1] * -1;	-- This is to make it sort in a different order
 	local newsText = v[2];
@@ -477,16 +474,16 @@ end
 --------------------------------------------------------------------
 -- Apply the launcher data: Status
 
-EzLauncher.EzHubStatusFrame.StatusName.Text = statusData["EzHub"];
-EzLauncher.EzAPIStatusFrame.StatusName.Text = statusData["EzAPI"];
-EzLauncher.EzLauncherStatusFrame.StatusName.Text = statusData["EzLauncher"];
+EzLauncher.EzHubStatusFrame.Status.Text = statusData["EzHub"];
+EzLauncher.EzAPIStatusFrame.Status.Text = statusData["EzAPI"];
+EzLauncher.EzLauncherStatusFrame.Status.Text = statusData["EzLauncher"];
 
 --------------------------------------------------------------------
 -- Apply the launcher data: latest version
 
 EzLauncher.Launch.MouseButton1Click:Connect(function()
 	loadstring(game:HttpGet(latestVersion))();
-	EzLauncher.EzLauncher.Frame:TweenPosition(endPos, Enum.EasingDirection.Out,
+	EzLauncher.EzLauncher.Frame:TweenPosition(startPos, Enum.EasingDirection.Out,
 		Enum.EasingStyle.Quad, 0.5, false, function()
 			EzLauncher.EzLauncher:Destroy();
 		end);
