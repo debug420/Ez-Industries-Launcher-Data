@@ -20,17 +20,17 @@
         },
         "Dark": {
             "ThemeIndex": 2,
-            "Primary": [41, 53, 68],
-            "Secondary": [35, 47, 62],
-            "Tertiary": [28, 41, 56],
-            "Quaternary": [18, 98, 159]
+            "Primary": [23, 10, 40],
+            "Secondary": [70, 54, 100],
+            "Tertiary": [78, 34, 12],
+            "Quaternary": [57, 23, 159]
         },
         "Light": {
             "ThemeIndex": 3,
-            "Primary": [41, 53, 68],
-            "Secondary": [35, 47, 62],
+            "Primary": [41, 74, 68],
+            "Secondary": [35, 52, 62],
             "Tertiary": [28, 41, 56],
-            "Quaternary": [18, 98, 159]
+            "Quaternary": [18, 96, 159]
         }
     }
 }
