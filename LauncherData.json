@@ -12,6 +12,21 @@
     "LatestVersion": "https://raw.githubusercontent.com/debug420/Ez-Hub/master/EzHub4.1.lua",
     "Themes": {
         "Default": {
+            "ThemeIndex": 1,
+            "Primary": [41, 53, 68],
+            "Secondary": [35, 47, 62],
+            "Tertiary": [28, 41, 56],
+            "Quaternary": [18, 98, 159]
+        },
+        "Dark": {
+            "ThemeIndex": 2,
+            "Primary": [41, 53, 68],
+            "Secondary": [35, 47, 62],
+            "Tertiary": [28, 41, 56],
+            "Quaternary": [18, 98, 159]
+        },
+        "Light": {
+            "ThemeIndex": 3,
             "Primary": [41, 53, 68],
             "Secondary": [35, 47, 62],
             "Tertiary": [28, 41, 56],

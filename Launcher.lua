@@ -479,20 +479,62 @@ EzLauncher.EzAPIStatusFrame.Status.Text = statusData["EzAPI"];
 EzLauncher.EzLauncherStatusFrame.Status.Text = statusData["EzLauncher"];
 
 --------------------------------------------------------------------
+-- Apply the launcher data: Themes
+
+local selectedTheme = "Default";
+local currentThemeIndex = themes[selectedTheme]["ThemeIndex"];
+local highestThemeIndex = (function()
+	local highest = 0;
+	for i,v in pairs(themes) do
+		if v["ThemeIndex"] > highest then highest = highest; end
+	end
+	return highest;
+end)();
+
+local function getThemeWithThemeIndex(themeIndex)
+	for i,v in pairs(themes) do
+		if v["ThemeIndex"] == themeIndex then return i; end
+	end
+end
+
+local function updateSelectedTheme()
+	selectedTheme = getThemeWithThemeIndex(currentThemeIndex);
+	EzLauncher.SelectedLabel.Text = selectedTheme;
+end
+
+EzLauncher.SelectionRight.MouseButton1Click:Connect(function()
+	if currentThemeIndex == highestThemeIndex then
+		currentThemeIndex = 1;
+	else
+		currentThemeIndex = currentThemeIndex + 1;
+	end
+	updateSelectedTheme();
+end)
+
+EzLauncher.SelectionLeft.MouseButton1Click:Connect(function()
+	if currentThemeIndex == 1 then
+		currentThemeIndex = highestThemeIndex;
+	else
+		currentThemeIndex = currentThemeIndex - 1;
+	end
+	updateSelectedTheme();
+end)
+
+--------------------------------------------------------------------
 -- Apply the launcher data: latest version
 
 EzLauncher.Launch.MouseButton1Click:Connect(function()
+	
+	-- Apply the theme before launching Ez Hub
+	_G.EzHubTheme = themes[selectedTheme];
 	loadstring(game:HttpGet(latestVersion))();
+
 	EzLauncher.EzLauncher.Frame:TweenPosition(startPos, Enum.EasingDirection.Out,
 		Enum.EasingStyle.Quad, 0.5, false, function()
 			EzLauncher.EzLauncher:Destroy();
 		end);
+
 end)
-
---------------------------------------------------------------------
--- Apply the launcher data: Themes
-
--- TODO
 
 --------------------------------------------------------------------
 -- Dragify
