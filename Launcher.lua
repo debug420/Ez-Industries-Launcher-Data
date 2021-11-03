@@ -423,22 +423,41 @@ EzLauncher.NewsSection.ContentFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y;
 EzLauncher.NewsSection.ContentFrame.ScrollBarImageColor3 = Color3.fromRGB(112, 112, 112);
 
 --------------------------------------------------------------------
--- Startup animation
+-- Get launcher data
 
-local oldSize = EzLauncher.EzLauncher.Frame.Size;
-for i,v in pairs(EzLauncher.EzLauncher:GetDescendants()) do if not v:IsA("GuiObject") then return end v.Visible = false; end
-EzLauncher.EzLauncher.Frame.Size = UDim2.new(0,0,0,0);
-
-EzLauncher.EzLauncher.Frame:TweenPosition(oldSize, Enum.EasingDirection.Out,
-	Enum.EasingStyle.Quad, 0.5);
-
-for i,v in pairs(EzLauncher.EzLauncher:GetDescendants()) do if not v:IsA("GuiObject") then return end v.Visible = true; end
-
---------------------------------------------------------------------
--- Get all the launcher data necessary
+EzLauncher.EzLauncher.Enabled = false;
 
 local launcherData = game:GetService("HttpService"):JSONDecode(
 	(game:HttpGet("https://raw.githubusercontent.com/debug420/Ez-Industries-Launcher-Data/master/LauncherData.json")));
+
+EzLauncher.EzLauncher.Enabled = true;
+
+--------------------------------------------------------------------
+-- Startup animation
+
+-- Essentially changes the visibillity of the descendants of the main frame of the launcher
+local function changeElementState(state)
+	for i,v in pairs(EzLauncher.EzLauncher.Frame:GetDescendants()) do
+		if v:IsA("GuiObject") then
+			v.Visible = state;
+		end
+	end
+end
+
+changeElementState(false);
+
+local oldSize = EzLauncher.EzLauncher.Frame.Size;
+EzLauncher.EzLauncher.Frame.Size = UDim2.new(0,0,0,0);
+
+EzLauncher.EzLauncher.Frame:TweenSize(oldSize, Enum.EasingDirection.Out,
+	Enum.EasingStyle.Quad, 0.3);
+
+wait(0.35);
+
+changeElementState(true);
+
+--------------------------------------------------------------------
+-- Get all the launcher data necessary
 
 local newsData = launcherData["NewsData"];
 local statusData = launcherData["StatusData"];
@@ -568,7 +587,7 @@ EzLauncher.Launch.MouseButton1Click:Connect(function()
 	_G.EzHubTheme = themes[selectedTheme];
 	loadstring(game:HttpGet(latestVersion))();
 
-	for i,v in pairs(EzLauncher.EzLauncher:GetDescendants()) do if not v:IsA("GuiObject") then return end v.Visible = false; end
+	changeElementState(false)
 
 	EzLauncher.EzLauncher.Frame:TweenSize(UDim2.new(0,0,0,0), Enum.EasingDirection.Out,
 		Enum.EasingStyle.Quad, 0.5, false, function()
