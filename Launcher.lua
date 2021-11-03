@@ -425,12 +425,14 @@ EzLauncher.NewsSection.ContentFrame.ScrollBarImageColor3 = Color3.fromRGB(112, 1
 --------------------------------------------------------------------
 -- Startup animation
 
-local startPos = UDim2.new(-0.5, 0, 0.5, 0);
-local endPos = UDim2.new(0.5, 0, 0.5, 0);
+local oldSize = EzLauncher.EzLauncher.Frame.Size;
+for i,v in pairs(EzLauncher.EzLauncher:GetDescendants()) do if not v:IsA("GuiObject") then return end v.Visible = false; end
+EzLauncher.EzLauncher.Frame.Size = UDim2.new(0,0,0,0);
 
-EzLauncher.EzLauncher.Frame.Position = startPos;
-EzLauncher.EzLauncher.Frame:TweenPosition(endPos, Enum.EasingDirection.Out,
+EzLauncher.EzLauncher.Frame:TweenPosition(oldSize, Enum.EasingDirection.Out,
 	Enum.EasingStyle.Quad, 0.5);
+
+for i,v in pairs(EzLauncher.EzLauncher:GetDescendants()) do if not v:IsA("GuiObject") then return end v.Visible = true; end
 
 --------------------------------------------------------------------
 -- Get all the launcher data necessary
@@ -528,20 +530,47 @@ end)
 --------------------------------------------------------------------
 -- Apply the launcher data: latest version
 
+-- List of accouonts that can launch Ez Hub regardless of the status
+-- Note that the status is just to prevent users from executing Ez Hub when it is in testing/broken stages
+-- Therefore there is no need for any type of secure whitelist
+local allowedOverrideUsers = {
+	2626915991,
+	1274116266,
+	2626881906,
+	2626911435,
+	1608045548,
+	1593772727,
+	2821690140,
+	269429714,
+	1772649133,
+	1818847308,
+	382498,
+	1606794809
+}
+
 EzLauncher.Launch.MouseButton1Click:Connect(function()
 	
 	-- Check if services are down
-	if EzLauncher.EzHubStatusFrame.Status.Text == "Offline" or
+	if not table.find(allowedOverrideUsers, game.Players.LocalPlayer.UserId) and (EzLauncher.EzHubStatusFrame.Status.Text == "Offline" or
 	EzLauncher.EzAPIStatusFrame.Status.Text == "Offline" or
-	EzLauncher.EzLauncherStatusFrame.Status.Text == "Offline" then
+	EzLauncher.EzLauncherStatusFrame.Status.Text == "Offline") then
+		spawn(function()
+			EzLauncher.Launch.Text = "Service Offline";
+			wait(3);
+			EzLauncher.Launch.Text = "Launch";
+		end)
 		return;
 	end
+
+	EzLauncher.Launch.Text = "Launching...";
 
 	-- Apply the theme before launching Ez Hub
 	_G.EzHubTheme = themes[selectedTheme];
 	loadstring(game:HttpGet(latestVersion))();
 
-	EzLauncher.EzLauncher.Frame:TweenPosition(startPos, Enum.EasingDirection.Out,
+	for i,v in pairs(EzLauncher.EzLauncher:GetDescendants()) do if not v:IsA("GuiObject") then return end v.Visible = false; end
+
+	EzLauncher.EzLauncher.Frame:TweenSize(UDim2.new(0,0,0,0), Enum.EasingDirection.Out,
 		Enum.EasingStyle.Quad, 0.5, false, function()
 			EzLauncher.EzLauncher:Destroy();
 		end);
