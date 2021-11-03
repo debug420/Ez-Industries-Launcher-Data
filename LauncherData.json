@@ -1,12 +1,10 @@
 {
     "NewsData": [
-        [1, "This is a test announcement for the new launcher in Ez Hub 4.2."],
-        [2, "@DIVIDER"],
-        [3, "Ez Hub 4.2 is now live. Enjoy the new launcher and the new theme support that has been added."]
+        [1, "Ez Hub 4.2 is now live. Enjoy the new launcher and the new theme support that has been added."]
     ],
     "StatusData": {
-        "EzHub": "Offline",
-        "EzAPI": "Offline",
+        "EzHub": "Online",
+        "EzAPI": "Online",
         "EzLauncher": "Online"
     },
     "LatestVersion": "https://raw.githubusercontent.com/debug420/Ez-Hub/master/EzHub.lua",
@@ -25,12 +23,12 @@
             "Tertiary": [35, 35, 35],
             "Quaternary": [40, 40, 40]
         },
-        "Light": {
+        "Tangy": {
             "ThemeIndex": 3,
-            "Primary": [250, 250, 250],
-            "Secondary": [220, 220, 220],
-            "Tertiary": [210, 210, 210],
-            "Quaternary": [90, 90, 90]
+            "Primary": [47, 55, 65],
+            "Secondary": [60, 92, 125],
+            "Tertiary": [40, 40, 40],
+            "Quaternary": [90, 165, 173]
         }
     }
 }
