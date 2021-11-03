@@ -520,6 +520,13 @@ end)
 
 EzLauncher.Launch.MouseButton1Click:Connect(function()
 	
+	-- Check if services are down
+	if EzLauncher.EzHubStatusFrame.Status.Text == "Offline" or
+	EzLauncher.EzHubStatusFrame.Status.Text == "Offline" or
+	EzLauncher.EzHubStatusFrame.Status.Text == "Offline" then
+		return;
+	end
+
 	-- Apply the theme before launching Ez Hub
 	_G.EzHubTheme = themes[selectedTheme];
 	loadstring(game:HttpGet(latestVersion))();
