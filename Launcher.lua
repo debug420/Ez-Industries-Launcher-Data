@@ -473,6 +473,16 @@ EzLauncher.EzHubStatusFrame.Status.Text = statusData["EzHub"];
 EzLauncher.EzAPIStatusFrame.Status.Text = statusData["EzAPI"];
 EzLauncher.EzLauncherStatusFrame.Status.Text = statusData["EzLauncher"];
 
+if EzLauncher.EzHubStatusFrame.Status.Text == "Offline" or "Maintenance" then
+	EzLauncher.EzHubStatusFrame.Status.TextColor3 = Color3.fromRGB(192, 49, 52)
+end
+if EzLauncher.EzAPIStatusFrame.Status.Text == "Offline" or "Maintenance" then
+	EzLauncher.EzAPIStatusFrame.Status.TextColor3 = Color3.fromRGB(192, 49, 52)
+end
+if EzLauncher.EzLauncherStatusFrame.Status.Text == "Offline" or "Maintenance" then
+	EzLauncher.EzLauncherStatusFrame.Status.TextColor3 = Color3.fromRGB(192, 49, 52)
+end
+
 --------------------------------------------------------------------
 -- Apply the launcher data: Themes
 
@@ -522,8 +532,8 @@ EzLauncher.Launch.MouseButton1Click:Connect(function()
 	
 	-- Check if services are down
 	if EzLauncher.EzHubStatusFrame.Status.Text == "Offline" or
-	EzLauncher.EzHubStatusFrame.Status.Text == "Offline" or
-	EzLauncher.EzHubStatusFrame.Status.Text == "Offline" then
+	EzLauncher.EzAPIStatusFrame.Status.Text == "Offline" or
+	EzLauncher.EzLauncherStatusFrame.Status.Text == "Offline" then
 		return;
 	end
 
