@@ -47,8 +47,8 @@ local EzLauncher = {
 	ContentFrame_3 = Instance.new("Frame"),
 	ThemeSelectionFrame = Instance.new("Frame"),
 	UICorner_8 = Instance.new("UICorner"),
-	SelectionLeft = Instance.new("TextLabel"),
-	SelectionRight = Instance.new("TextLabel"),
+	SelectionLeft = Instance.new("TextButton"),
+	SelectionRight = Instance.new("TextButton"),
 	SelectedLabel = Instance.new("TextLabel"),
 	Launch = Instance.new("TextButton"),
 	UICorner_9 = Instance.new("UICorner"),
@@ -486,7 +486,7 @@ local currentThemeIndex = themes[selectedTheme]["ThemeIndex"];
 local highestThemeIndex = (function()
 	local highest = 0;
 	for i,v in pairs(themes) do
-		if v["ThemeIndex"] > highest then highest = highest; end
+		if v["ThemeIndex"] > highest then highest = v["ThemeIndex"]; end
 	end
 	return highest;
 end)();
@@ -527,6 +527,7 @@ EzLauncher.Launch.MouseButton1Click:Connect(function()
 	
 	-- Apply the theme before launching Ez Hub
 	_G.EzHubTheme = themes[selectedTheme];
+	_G.EzHubDevMode = true;
 	loadstring(game:HttpGet(latestVersion))();
 
 	EzLauncher.EzLauncher.Frame:TweenPosition(startPos, Enum.EasingDirection.Out,
