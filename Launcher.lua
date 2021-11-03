@@ -473,13 +473,13 @@ EzLauncher.EzHubStatusFrame.Status.Text = statusData["EzHub"];
 EzLauncher.EzAPIStatusFrame.Status.Text = statusData["EzAPI"];
 EzLauncher.EzLauncherStatusFrame.Status.Text = statusData["EzLauncher"];
 
-if EzLauncher.EzHubStatusFrame.Status.Text == "Offline" or "Maintenance" then
+if EzLauncher.EzHubStatusFrame.Status.Text == "Offline" then
 	EzLauncher.EzHubStatusFrame.Status.TextColor3 = Color3.fromRGB(192, 49, 52)
 end
-if EzLauncher.EzAPIStatusFrame.Status.Text == "Offline" or "Maintenance" then
+if EzLauncher.EzAPIStatusFrame.Status.Text == "Offline" then
 	EzLauncher.EzAPIStatusFrame.Status.TextColor3 = Color3.fromRGB(192, 49, 52)
 end
-if EzLauncher.EzLauncherStatusFrame.Status.Text == "Offline" or "Maintenance" then
+if EzLauncher.EzLauncherStatusFrame.Status.Text == "Offline" then
 	EzLauncher.EzLauncherStatusFrame.Status.TextColor3 = Color3.fromRGB(192, 49, 52)
 end
 
