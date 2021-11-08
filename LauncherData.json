@@ -31,6 +31,13 @@
             "Secondary": [27, 28, 28],
             "Tertiary": [27, 28, 28],
             "Quaternary": [191, 34, 34]
+        },
+        "Crepe Pink": {
+            "ThemeIndex": 4,
+            "Primary": [213, 153, 125],
+            "Secondary": [203, 133, 101],
+            "Tertiary": [213, 127, 89],
+            "Quaternary": [237, 169, 139]
         }
     }
 }
