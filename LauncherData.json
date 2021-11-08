@@ -2,7 +2,9 @@
     "NewsData": [
         [1, "Ez Hub 4.2 is now live. Enjoy the new launcher and the new theme support that has been added."],
         [2, "@DIVIDER"],
-        [3, "There appears to be some sort of memory leak regarding the ESP. This means that your game will gradually slow down from 60 FPS to something like 40 FPS. We are still investigating this as we are not sure what is causing it. Thank you for your patience."]
+        [3, "There appears to be some sort of memory leak regarding the ESP. This means that your game will gradually slow down from 60 FPS to something like 40 FPS. We are still investigating this as we are not sure what is causing it. Thank you for your patience."],
+        [4, "@DIVIDER"],
+        [5, "With the ESP leak issue being our main priority, Ez Hub 4.2.1 attempts to fix it. If you still experience issues, please file a report."]
     ],
     "StatusData": {
         "EzHub": "Online",
