@@ -25,12 +25,12 @@
             "Tertiary": [35, 35, 35],
             "Quaternary": [40, 40, 40]
         },
-        "Tangy": {
+        "Black and Red": {
             "ThemeIndex": 3,
-            "Primary": [47, 55, 65],
-            "Secondary": [60, 92, 125],
-            "Tertiary": [40, 40, 40],
-            "Quaternary": [90, 165, 173]
+            "Primary": [20, 20, 20],
+            "Secondary": [27, 28, 28],
+            "Tertiary": [27, 28, 28],
+            "Quaternary": [191, 34, 34]
         }
     }
 }
