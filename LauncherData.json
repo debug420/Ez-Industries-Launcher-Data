@@ -5,8 +5,8 @@
         [3, "10/11: Ez Hub 4.2.2 has been released. A few minor fixes and minor optimisations with the ESP. 4.2.2 concludes Ez Hub 4.2 (unless further major bugs arise). Make sure to report bugs in our Discord."]
     ],
     "StatusData": {
-        "EzHub": "Online",
-        "EzAPI": "Online",
+        "EzHub": "Offline",
+        "EzAPI": "Offline",
         "EzLauncher": "Online"
     },
     "LatestVersion": "https://raw.githubusercontent.com/debug420/Ez-Hub/master/EzHub.lua",
