@@ -20,8 +20,7 @@
             "Tertiary": [28, 41, 56],
             "Quaternary": [18, 98, 159],
             "ScrollBarColor": [14, 21, 30],
-	    "DefaultTextColor": [255, 255, 255],
-	    "BorderColor": [18, 98, 159]
+	    "DefaultTextColor": [255, 255, 255]
         },
         "Dark": {
             "ThemeIndex": 2,
@@ -30,8 +29,7 @@
             "Tertiary": [35, 35, 35],
             "Quaternary": [40, 40, 40],
             "ScrollBarColor": [14, 21, 30],
-	    "DefaultTextColor": [255, 255, 255],
-	    "BorderColor": [60, 60, 60]
+	    "DefaultTextColor": [255, 255, 255]
         },
         "Black and Red": {
             "ThemeIndex": 3,
@@ -40,8 +38,7 @@
             "Tertiary": [35, 35, 35],
             "Quaternary": [190, 35, 35],
             "ScrollBarColor": [14, 21, 30],
-	    "DefaultTextColor": [240, 240, 240],
-	    "BorderColor": [190, 35, 35]
+	    "DefaultTextColor": [240, 240, 240]
         },
         "Crepe Pink": {
             "ThemeIndex": 4,
@@ -50,8 +47,7 @@
             "Tertiary": [213, 127, 89],
             "Quaternary": [237, 169, 139],
             "ScrollBarColor": [14, 21, 30],
-	    "DefaultTextColor": [255, 255, 255],
-	    "BorderColor": [237, 169, 139]
+	    "DefaultTextColor": [255, 255, 255]
         }
     }
 }
