@@ -31,7 +31,7 @@
             "Quaternary": [40, 40, 40],
             "ScrollBarColor": [14, 21, 30],
 	    "DefaultTextColor": [255, 255, 255],
-	    "BorderColor": [18, 98, 159]
+	    "BorderColor": [60, 60, 60]
         },
         "Black and Red": {
             "ThemeIndex": 3,
@@ -41,7 +41,7 @@
             "Quaternary": [190, 35, 35],
             "ScrollBarColor": [14, 21, 30],
 	    "DefaultTextColor": [240, 240, 240],
-	    "BorderColor": [18, 98, 159]
+	    "BorderColor": [190, 35, 35]
         },
         "Crepe Pink": {
             "ThemeIndex": 4,
@@ -51,7 +51,7 @@
             "Quaternary": [237, 169, 139],
             "ScrollBarColor": [14, 21, 30],
 	    "DefaultTextColor": [255, 255, 255],
-	    "BorderColor": [18, 98, 159]
+	    "BorderColor": [237, 169, 139]
         }
     }
 }
