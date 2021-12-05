@@ -7,7 +7,7 @@
         [5, "5/12: Ez Hub 4.3 has been released bringing the all new terminal to Ez Hub. Make sure to check it out!"]
     ],
     "StatusData": {
-        "EzHub": "Offline",
+        "EzHub": "Online",
         "EzAPI": "Online",
         "EzLauncher": "Online"
     },
