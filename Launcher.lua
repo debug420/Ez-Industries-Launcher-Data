@@ -58,7 +58,7 @@ local EzLauncher = {
 --Properties:
 
 EzLauncher.EzLauncher.Name = "EzLauncher"
-EzLauncher.EzLauncher.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+EzLauncher.EzLauncher.Parent = game.CoreGui
 EzLauncher.EzLauncher.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 EzLauncher.Frame.Parent = EzLauncher.EzLauncher
