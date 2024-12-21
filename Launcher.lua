@@ -570,7 +570,7 @@ local allowedOverrideUsers = {
 EzLauncher.Launch.MouseButton1Click:Connect(function()
 	
 	-- Check if services are down
-	if not table.find(allowedOverrideUsers, game.Players.LocalPlayer.UserId) and (EzLauncher.EzHubStatusFrame.Status.Text == "Offline" or
+	if not table.find(allowedOverrideUsers, game:GetService("Players").LocalPlayer.UserId) and (EzLauncher.EzHubStatusFrame.Status.Text == "Offline" or
 	EzLauncher.EzAPIStatusFrame.Status.Text == "Offline" or
 	EzLauncher.EzLauncherStatusFrame.Status.Text == "Offline") then
 		spawn(function()
