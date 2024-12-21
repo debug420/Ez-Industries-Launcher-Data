@@ -47,6 +47,15 @@
             "Quaternary": [237, 169, 139],
             "ScrollBarColor": [14, 21, 30],
             "DefaultTextColor": [255, 255, 255]
+        },
+        "Aqua Lake": {
+            "ThemeIndex": 5,
+            "Primary": [53, 99, 96],
+            "Secondary": [89, 149, 156],
+            "Tertiary": [75, 145, 150],
+            "Quaternary": [73, 143, 138],
+            "ScrollBarColor": [14, 21, 30],
+            "DefaultTextColor": [255, 255, 255]
         }
     }
 }
